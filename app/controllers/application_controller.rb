@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   
   before_filter :configure_permitted_parameters, if: :devise_controller?
   before_filter :reject_locked!, if: :devise_controller?
+  before_filter :set_locale
   
 
   # Devise permitted params
@@ -27,7 +28,7 @@ class ApplicationController < ActionController::Base
   
   # Redirects on successful sign in
   def after_sign_in_path_for(resource)
-    inside_path
+    admin_root_path
   end
   
   # Auto-sign out locked users
@@ -52,5 +53,21 @@ class ApplicationController < ActionController::Base
     end
   end
   helper_method :require_admin!
+
+  def extract_locale_from_accept_language_header
+    request.env['HTTP_ACCEPT_LANGUAGE'].split(',').first.downcase.gsub(/-\w{2}/, &:upcase)
+  end
+
+  def set_locale
+    if session[:locale].blank? && I18n.available_locales.include?( extract_locale_from_accept_language_header.to_sym )
+      session[:locale] = extract_locale_from_accept_language_header
+    end
+
+    if params[:locale] && I18n.available_locales.include?( params[:locale].to_sym )
+      session[:locale] = params[:locale]
+    end
+    
+    I18n.locale = session[:locale] || I18n.default_locale
+  end
   
 end
