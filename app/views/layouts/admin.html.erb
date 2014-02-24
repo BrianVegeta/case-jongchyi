@@ -8,9 +8,9 @@
 </head>
 <body>
   <div id="wrap">
-    <header>
-      <%= render 'layouts/navigation' %>
-    </header>
+    <% if user_signed_in? %>
+      <%= render 'layouts/admin_header' %>
+    <% end %>
       
     <div class="container">
        
