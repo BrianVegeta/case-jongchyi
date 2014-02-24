@@ -4,7 +4,7 @@ CaseJongchyi::Application.routes.draw do
   get "inside", to: "pages#inside", as: "inside"
   
     
-  devise_for :users, skip: :passwords
+  devise_for :users, skip: :passwords, :controllers => { sessions: 'admin/sessions' }
   
   namespace :admin do
     root "base#index"
