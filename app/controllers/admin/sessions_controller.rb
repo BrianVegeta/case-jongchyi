@@ -1,4 +1,5 @@
 class Admin::SessionsController < Devise::SessionsController
+	before_filter :set_locale
 	layout 'admin'
 
 	def new
@@ -15,5 +16,9 @@ class Admin::SessionsController < Devise::SessionsController
 
 	def after_sign_out_path_for(resource)
     new_user_session_path
+  end
+
+  def set_locale
+    I18n.locale = 'zh-TW'
   end
 end

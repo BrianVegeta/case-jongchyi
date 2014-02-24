@@ -1,45 +1,33 @@
 <div class="row">
-  <div class="col-sm-6 ">
-    <h1>Sign in</h1>
+  <div class="col-md-6 col-md-offset-3">
+    <h1 class="text-center">忠祺鑽石後台登入</h1>
 
     <%= form_for(resource, :as => resource_name, 
-    :url => session_path(resource_name),
+    :url => session_path(resource_name), html: { autocomplete: 'off' },
     role: "form") do |f| %>
   
       <div class="form-group">
-        <%= f.label :username %>
         <div class="row">
-          <div class="col-sm-6">
-            <%= f.text_field :username, :autofocus => true, class: "form-control" %>  
+          <div class="col-sm-6 col-sm-offset-3">
+            <%= f.text_field :username, :autofocus => true, class: "form-control", placeholder: '帳號' %>
           </div>
         </div>
       </div>
       
       <div class="form-group">
-        <%= f.label :password %>
         <div class="row">
-          <div class="col-sm-6">
-            <%= f.password_field :password, class: "form-control" %>
+          <div class="col-sm-6 col-sm-offset-3">
+            <%= f.password_field :password, class: "form-control", placeholder: '密碼' %>
           </div>
         </div>
       </div>
-  
-      
-
-      <% if devise_mapping.rememberable? -%>
-      <div class="checkbox">
-        <%= f.check_box :remember_me %> <%= f.label :remember_me %>
-      </div>
-      <% end -%>
 
       <div class="row">
-        <div class="col-sm-6">
-          <%= f.submit "Sign in", class: "btn btn-primary" %>
+        <div class="col-sm-6 col-sm-offset-3">
+          <%= f.submit "登入", class: "col-sm-12 btn btn-primary" %>
         </div>
       </div>
-      <% end %>
-
-      
+      <% end %> 
 
     </div>
   </div>
