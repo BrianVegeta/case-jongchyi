@@ -4,4 +4,8 @@ module ApplicationHelper
       @title = "#{value} | CaseJongchyi"      
     end
   end
+
+  def is_super_admin?
+    current_user.admin? && current_user.super?
+  end
 end
