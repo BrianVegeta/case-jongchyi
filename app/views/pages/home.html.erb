@@ -1,3 +1,15 @@
+<style type="text/css">
+</style>
+<select>
+  <optgroup label="Swedish Cars">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+  </optgroup>
+  <optgroup label="German Cars">
+    <option value="mercedes">Mercedes</option>
+    <option value="audi">Audi</option>
+  </optgroup>
+</select>
 <% title("Home Page") %>
 <h1>Home Page <small>views/pages/home.html.erb</small></h1>
 <p>This is your home page. Use the menu at the top to sign in / sign up / sign out.</p>
@@ -5,3 +17,41 @@
 <%= I18n.locale %>
 <%= link_to "中文版", :locale => "zh-TW"	%>
 <%= link_to "English", :locale=>'en'%>
+
+<div id="slider" style="height: 100%; min-height:100%;">
+    <div class="active" style="background-color: red; height: 100%; min-height:100%;">1</div>
+    <div style="background-color: green; height: 400px;">1</div>
+    <div style="background-color: blue; height: 400px;">1</div>
+</div>
+
+<script type="text/javascript">
+// 	$(document).ready(function(){
+// $(window).on('mousewheel DOMMouseScroll', function(e){
+//     e.preventDefault();      
+//     var delta = e.originalEvent.detail < 0 || e.originalEvent.wheelDelta > 0 ? 1 : -1;
+//     //get the current active slide
+//     var $active = $('#slider > .active');
+
+//     if(delta < 0) { 
+//         //mousewheel down
+//         var $next = $active.next();
+//         //check if there's a next slide available
+//         if($next.length){
+//             //animate scrolling to the next slides offset top
+//            $('body, html').stop(true).animate({scrollTop:$next.offset().top},'slow');
+//            //move also the indicator class 'active'
+//            $next.addClass('active').siblings().removeClass('active');
+//         }
+
+//     }else{
+//         //mousewheel up
+//         var $prev = $active.prev();
+//         if($prev.length){
+//              //animate scrolling to the previous slides offset top
+//             $('body, html').stop(true).animate({scrollTop:$prev.offset().top},'slow'); 
+//             $prev.addClass('active').siblings().removeClass('active');
+//         }
+//     }
+// });  
+// });
+</script>
