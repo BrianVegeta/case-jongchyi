@@ -37,14 +37,11 @@ class Admin::ProductsController < Admin::BaseController
   # PATCH/PUT /admin/products/1
   # PATCH/PUT /admin/products/1.json
   def update
-    respond_to do |format|
-      if @product.update(product_params)
-        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
-      end
+    if @product.update(product_params)
+      redirect_to admin_products_path, notice: '產品已成功更新。'
+    else
+      flash.now[:alert] = extrac_error_message(@product)
+      render action: 'edit'
     end
   end
 
@@ -61,7 +58,7 @@ class Admin::ProductsController < Admin::BaseController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
-      @product = Admin::Product.find(params[:id])
+      @product = Product.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

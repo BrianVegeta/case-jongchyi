@@ -1,6 +1,15 @@
-<h1>Editing admin_product</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @admin_product %> |
-<%= link_to 'Back', admin_products_path %>
+<div class="row">
+  <div class="col-sm-12">
+    <h1>編輯產品 <small><%= "#{@product.title.capitalize} - id: #{@product.id}" %></small></h1>
+    <hr>
+    <div class="col-sm-6">
+    	<%= form_tag '/upload', multipart: true do %>
+  			<%= file_field_tag "file" %>
+			<% end %>
+    	<%= image_tag("gray.jpg", class: 'img-rounded') %>
+    </div>
+    <div class="col-sm-6">
+    	<%= render 'form' %>
+    </div>
+  </div>
+</div>
