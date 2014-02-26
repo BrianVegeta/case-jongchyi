@@ -1,1 +1,39 @@
-<li><%= link_to t('product.sample'), '#' %></li>
+<li class="dropdown" style="height: 50px;">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= t('product.sample') %> <b class="caret"></b></a>
+  <ul class="dropdown-menu">
+  	<li>
+      <a href="">
+        <i class="fa fa-cogs fa-2x"></i> <%= t 'product.category.watches' %>
+      </a>
+    </li>
+    <li>
+      <a href="">
+        <span class="fa-stack">
+				  <i class="fa fa-square fa-stack-2x"></i>
+				  <i class="fa fa-flash fa-stack-1x fa-inverse"></i>
+				</span>
+        <%= t 'product.category.precious_metals' %>
+      </a>
+    </li>
+    <li>
+      <a href="">
+        <i class="fa fa-camera-retro fa-2x"></i> <%= t 'product.category.photoelectric' %>
+      </a>
+    </li>
+    <li>
+      <a href="">
+        <i class="fa fa-flask fa-2x"></i> <%= t 'product.category.polymer_materials' %>
+      </a>
+    </li>
+    <li>
+      <a href="">
+        <i class="fa fa-inbox fa-2x"></i> <%= t 'product.category.chassis_aluminum' %>
+      </a>
+    </li>
+    <li>
+      <a href="">
+        <i class="fa fa-wrench fa-2x"></i> <%= t 'product.category.exclusive_custom' %>
+      </a>
+    </li>
+  </ul>
+</li>
