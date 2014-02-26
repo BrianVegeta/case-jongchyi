@@ -8,7 +8,7 @@ class Admin::UsersController < Admin::BaseController
   
 
   def index
-    @users = User.search_and_order(params[:search], params[:page])
+    @users = User.all
   end
   
   def show
@@ -44,25 +44,29 @@ class Admin::UsersController < Admin::BaseController
     end
   end
   
+  def destroy
+    @user.destroy
+    redirect_to tests_url
+  end
   
   private 
   
-  def set_user
-    @user = User.friendly.find(params[:id])
-  rescue
-    flash[:alert] = "The user with an id of #{params[:id]} doesn't exist."
-    redirect_to admin_users_path
-  end
-  
-  def user_params
-    params.require(:user).permit(
-    :username,
-    :email,
-    :password,
-    :password_confirmation,
-    :admin,
-    :locked
-    )
-  end
+    def set_user
+      @user = User.friendly.find(params[:id])
+    rescue
+      flash[:alert] = "The user with an id of #{params[:id]} doesn't exist."
+      redirect_to admin_users_path
+    end
+    
+    def user_params
+      params.require(:user).permit(
+      :username,
+      :email,
+      :password,
+      :password_confirmation,
+      :admin,
+      :locked
+      )
+    end
   
 end
