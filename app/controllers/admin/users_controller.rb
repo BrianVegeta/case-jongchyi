@@ -10,43 +10,58 @@ class Admin::UsersController < Admin::BaseController
   def index
     @users = User.all
   end
+
+  def new
+    @user = User.new
+  end
+
+  def create
+    new_params = user_params.dup
+    new_params[:username] = new_params[:username].strip
+    new_params[:admin] = true
+    @user = User.new(new_params)
+    if @user.save
+      redirect_to admin_users_path, notice: '管理員成功新增'
+    else
+      flash.now[:alert] = extrac_error_message(@user)
+      render 'new'
+    end
+  end
   
   def show
     redirect_to edit_admin_user_path(params[:id])
   end
   
   def edit
+
   end
   
   def update
     old_username = @user.username
     new_params = user_params.dup
     new_params[:username] = new_params[:username].strip
-    new_params[:email] = new_params[:email].strip
     
     @user.username = new_params[:username]
-    @user.email = new_params[:email]
-    @user.password = new_params[:password] if new_params[:password].strip.length > 0
-    @user.password_confirmation = new_params[:password_confirmation] if new_params[:password_confirmation].strip.length > 0
+    if new_params[:password].strip.length > 0
+      @user.password = new_params[:password] 
+      @user.password_confirmation = new_params[:password_confirmation]
+    end  
     
-    if current_user.id != @user.id
-      @user.admin = new_params[:admin]=="0" ? false : true
-      @user.locked = new_params[:locked]=="0" ? false : true
-    end
-    
-    if @user.valid?
-      @user.skip_reconfirmation!
-      @user.save
-      redirect_to admin_users_path, notice: "#{@user.username} updated."
+    if @user.save
+      redirect_to admin_users_path, notice: "#{@user.username} 已變更。"
     else
-      flash[:alert] = "#{old_username} couldn't be updated."
+      flash.now[:alert] = extrac_error_message(@user)
       render :edit
     end
   end
   
   def destroy
+    if @user.super? && @user.admin?
+      redirect_to admin_users_path  
+      return
+    end
     @user.destroy
-    redirect_to tests_url
+    redirect_to admin_users_path
   end
   
   private 
@@ -61,11 +76,8 @@ class Admin::UsersController < Admin::BaseController
     def user_params
       params.require(:user).permit(
       :username,
-      :email,
       :password,
-      :password_confirmation,
-      :admin,
-      :locked
+      :password_confirmation
       )
     end
   

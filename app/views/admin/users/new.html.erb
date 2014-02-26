@@ -1,8 +1,6 @@
 <div class="row">
   <div class="col-sm-6">
-    <h1>
-      變更管理員 <small><%= "#{@user.username.capitalize} - id: #{@user.id}" %></small>
-    </h1>
+    <h1>新增管理員</h1>
 
     <%= form_for [:admin, @user], :html => { :role => "form", autocomplete: 'off' } do |f| %>
     
@@ -35,9 +33,9 @@
 
     <div class="row">
       <div class="col-sm-6">
-        <%= f.submit "確定變更", class: "btn btn-primary" %>
+        <%= f.submit "確定新增", class: "btn btn-primary" %>
       </div>
-    </div>
+    </div>    
     
     <% end %>
 

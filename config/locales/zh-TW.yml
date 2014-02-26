@@ -54,6 +54,7 @@ zh-TW:
     - :day
   datetime:
     distance_in_words:
+      never: 'test'
       about_x_hours:
         one: 大約一小時
         other: 大約 %{count} 小時
@@ -192,7 +193,19 @@ zh-TW:
   # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
   activemodel:
     errors:
-      <<: *errors
+      # <<: *errors
   activerecord:
     errors:
       <<: *errors
+      models:
+        user:
+          attributes:
+            username:
+              too_short: '帳號太短(至少4個字元)。'
+              too_long: '帳號太長(最長15個字元)。'
+              taken: '此帳號已被使用。'
+            password: 
+              blank: '請填密碼。'
+            password_confirmation:
+              blank: '請再次輸入密碼。'
+              confirmation: '密碼兩次輸入不同。'

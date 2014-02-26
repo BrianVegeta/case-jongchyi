@@ -1,15 +1,17 @@
 <h1>管理員 <small>列表</small></h1>
 
-<table class="table table-striped">
-  <tr>
-    <th>User ID</th>
-    <th>Username</th>
-    <th>登入次數</th>
-    <th>建立時間</th>
-    <th>最後登入</th>
-    <th>登入 IP</th>
-    <th></th>
-  </tr>
+<table class="table table-striped ">
+  <thead>
+    <tr>
+      <th>User ID</th>
+      <th>帳號</th>
+      <th>登入次數</th>
+      <th>建立時間</th>
+      <th>最後登入</th>
+      <th>登入 IP</th>
+      <th><%= link_to '新增管理員', new_admin_user_path, class: 'btn btn-primary btn-sm' %></th>
+    </tr>
+  </thead>
   
   <% @users.each do |user| %>
   
@@ -21,7 +23,7 @@
     <% unless user.last_sign_in_at.nil? %>
     <td><%= time_ago_in_words(user.last_sign_in_at)%> 前</td>
     <% else %>
-    <td>never</td>
+    <td>還未登入過</td>
     <% end %>
     <td><%= user.last_sign_in_ip %></td>
     <td>

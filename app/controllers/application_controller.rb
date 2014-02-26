@@ -70,4 +70,13 @@ class ApplicationController < ActionController::Base
     I18n.locale = session[:locale] || I18n.default_locale
   end
   
+  def extrac_error_message(resource)
+    error_msg = ''
+    resource.errors.messages.each do | messages |
+      messages[1].each do |message|
+       error_msg += message + '<br>' 
+      end
+    end
+    return error_msg
+  end
 end
