@@ -13,6 +13,15 @@
       <ul class="nav navbar-nav">
         <%= render 'layouts/navigation_links' %>
       </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <% if I18n.locale == :'zh-TW' %>
+            <%= link_to "简体版", :locale => "zh-CN" %>
+          <% else %>  
+            <%= link_to "繁體版", :locale => "zh-TW" %>
+          <% end -%>
+        </li>  
+      </ul>
     </div>
   </div>
 </nav>
