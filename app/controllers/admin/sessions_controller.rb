@@ -19,6 +19,6 @@ class Admin::SessionsController < Devise::SessionsController
   end
 
   def set_locale
-    I18n.locale = 'zh-TW'
+    I18n.locale = :'zh-TW'
   end
 end
