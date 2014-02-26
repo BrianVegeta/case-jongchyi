@@ -221,3 +221,10 @@ zh-TW:
             password_confirmation:
               blank: '請再次輸入密碼。'
               confirmation: '密碼兩次輸入不同。'
+        product:
+          attributes:
+            title:
+              blank: '請填繁體標題。'
+              too_long: '標題太長(最長254個字元)。'
+            content: 
+              blank: 請填繁體內容。

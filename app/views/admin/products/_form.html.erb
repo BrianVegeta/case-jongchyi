@@ -56,15 +56,15 @@
 <% end %>
 <script type="text/javascript">
   $('.ckeditor').ckeditor({
-    height: 250,
+    height: 280,
     toolbar: [
       { name: 'clipboard', groups: [ 'clipboard', 'undo' ], items: [ 'Cut', 'Copy', 'Paste', '-', 'Undo', 'Redo' ] },
       { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] },
       { name: 'insert', items: [ 'Table'] },
+      { name: 'colors', items: [ 'TextColor', 'BGColor' ] },
       { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
       { name: 'tools', items: [ 'Maximize'] },
-      { name: 'links', items: [ 'Link', 'Unlink', 'Anchor' ] },
-      { name: 'colors', items: [ 'TextColor', 'BGColor' ] }
+      { name: 'links', items: [ 'Link', 'Unlink', 'Anchor' ] }
     ]
   });
 </script>

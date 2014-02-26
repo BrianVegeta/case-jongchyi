@@ -24,16 +24,13 @@ class Admin::ProductsController < Admin::BaseController
   # POST /admin/products
   # POST /admin/products.json
   def create
-    @product = Admin::Product.new(admin_product_params)
+    @product = Product.new(product_params)
 
-    respond_to do |format|
-      if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @product }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
-      end
+    if @product.save
+      redirect_to admin_products_path, notice: '產品已成功新增。'
+    else
+      flash.now[:alert] = extrac_error_message(@product)
+      render action: 'new'
     end
   end
 
@@ -41,7 +38,7 @@ class Admin::ProductsController < Admin::BaseController
   # PATCH/PUT /admin/products/1.json
   def update
     respond_to do |format|
-      if @product.update(admin_product_params)
+      if @product.update(product_params)
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
         format.json { head :no_content }
       else
@@ -68,7 +65,12 @@ class Admin::ProductsController < Admin::BaseController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def admin_product_params
-      params[:admin_product]
+    def product_params
+      params.require(:product).permit(
+        :title, 
+        :content,
+        :zh_cn_title,
+        :zh_cn_content
+      )
     end
 end

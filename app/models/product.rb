@@ -20,4 +20,6 @@ class Product < ActiveRecord::Base
 		}
 	end
 
+	validates :title,  :presence => true, :length => {:maximum => 254}
+	validates :content,  :presence => true
 end
