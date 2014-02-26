@@ -1,12 +1,6 @@
 class Admin::UsersController < Admin::BaseController
-  before_action :set_user, only: [
-    :show,
-    :edit,
-    :update,
-    :destroy
-  ]
+  before_action :set_user, only: [:edit, :update, :destroy]
   
-
   def index
     @users = User.all
   end
@@ -26,10 +20,6 @@ class Admin::UsersController < Admin::BaseController
       flash.now[:alert] = extrac_error_message(@user)
       render 'new'
     end
-  end
-  
-  def show
-    redirect_to edit_admin_user_path(params[:id])
   end
   
   def edit
