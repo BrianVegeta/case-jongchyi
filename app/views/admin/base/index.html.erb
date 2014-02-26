@@ -1,4 +1,14 @@
 <h1>後台介面 <small>首頁</small></h1>
+<select>
+  <% Product.sub_cates.each do |cate_id, cates| %>
+    <optgroup label="<%= Product.cates[cate_id] %>">
+      <% cates.each do |sub_id, cate| %>
+        <option value="<%= sub_id %>"><%= cate %></option>
+      <% end %>
+    </optgroup>
+  <% end %>
+</select>
+
 <div class="row">
   <div class="col-sm-4">
     <h3>Menu</h3>

@@ -1,2 +1,23 @@
 class Product < ActiveRecord::Base
+	def self.cates
+		{
+			1 => I18n.t('product.category.watches'),
+			5 => I18n.t('product.category.precious_metals'),
+			9 => I18n.t('product.category.photoelectric'),
+			13 => I18n.t('product.category.polymer_materials'),
+			17 => I18n.t('product.category.chassis_aluminum'),
+			21 => I18n.t('product.category.exclusive_custom')
+		}
+	end
+	def self.sub_cates
+		{
+			1 => {2 => 'A', 3 => 'B', 4 => 'C'},
+			5 => {6 => 'A', 7 => 'B', 8 => 'C'},
+			9 => {10 => 'A', 11 => 'B', 12 => 'C'},
+			13 => {14 => 'A', 15 => 'B', 16 => 'C'},
+			17 => {18 => 'A', 19 => 'B', 20 => 'C'},
+			21 => {22 => 'A', 23 => 'B', 24 => 'C'}
+		}
+	end
+
 end

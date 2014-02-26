@@ -1,4 +1,12 @@
 zh-TW:
+  product:
+    category:
+      watches: 鐘錶產業
+      precious_metals: 貴金屬加工
+      photoelectric: 光電產業
+      polymer_materials: 高分子材加工
+      chassis_aluminum: 機殼&鋁板
+      exclusive_custom: 專屬訂製
   date:
     abbr_day_names:
     - 日
