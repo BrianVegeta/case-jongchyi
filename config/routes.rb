@@ -11,6 +11,7 @@ CaseJongchyi::Application.routes.draw do
   namespace :admin do
     root "base#index"
     resources :users, except: :show
+    resources :products
   end
   
 end
