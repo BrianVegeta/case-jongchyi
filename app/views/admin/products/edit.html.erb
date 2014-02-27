@@ -1,15 +1,95 @@
+<style type="text/css">
+.modal .modal-dialog { 
+  width: 800px; 
+}
+</style>
 <div class="row">
   <div class="col-sm-12">
     <h1>編輯產品 <small><%= "#{@product.title.capitalize} - id: #{@product.id}" %></small></h1>
     <hr>
     <div class="col-sm-6">
-    	<%= form_tag '/upload', multipart: true do %>
-  			<%= file_field_tag "file" %>
-			<% end %>
-    	<%= image_tag("gray.jpg", class: 'img-rounded') %>
+      <span id="fileupload">
+        <%= form_for [:admin, @photo], remote: true, authenticity_token: true, :html => { :multipart => true, class: 'form-inline' } do |f| %>
+          <div class="form-group">
+            <%= f.file_field :avatar, id: :uplaod, class: 'form-control' %>
+          </div>
+        <% end %>
+      </span>
+    	<%= image_tag(@product.photo.avatar.url(:thumb), class: 'img-rounded', id: 'products_image') %>
     </div>
     <div class="col-sm-6">
     	<%= render 'form' %>
     </div>
   </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">選擇裁剪區域</h4>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        <%= form_for [:admin, @photo], remote: true, authenticity_token: true, method: :put, :html => { class: 'form-inline', id: :crop_form } do |f| %>
+          <% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>
+            <%= f.hidden_field attribute, :id => attribute %>
+          <% end %>
+          <%= f.submit '確定', class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<%= stylesheet_link_tag "jquery.Jcrop" %>
+<script type="text/javascript">
+  $(function () {
+    var crop_image = '<%= image_tag("missing.jpg", id: "crop_image") %>';
+    var photo_original_width = 1;
+    $('#fileupload').fileupload({
+      dataType: 'json',
+      add: function (e, data) {
+        data.submit();
+      },
+      done: function (e, data) {
+        photo_original_width = data.result.photo_width
+        $('#myModal').modal({
+          keyboard: false
+        });
+        $('.modal-body').html($(crop_image).attr('src', data.result.thumb));
+        $('#crop_form').attr('action', data.result.action);
+        $('#product_photo_id').val(data.result.photo_id);
+      }
+    });
+
+    $('#crop_form').bind("ajax:success", function(event, data) {
+      $('#myModal').modal('hide');
+      $('#products_image').attr('src', data.thumb)
+      // $('.modal-body').html($(crop_image).attr('src', data.thumb));
+    });
+
+    $('#myModal').on('shown.bs.modal', function (e) {
+      $('#crop_image').Jcrop({
+        onChange: update_crop,
+        onSelect: update_crop,
+        setSelect: [0, 0, 400, 400],
+        aspectRatio: 1,
+        allowSelect: false
+      });
+      
+      $('input.jcrop-keymgr').hide().css({'visibility': 'hidden'});
+    });
+
+    function update_crop(coords) {
+      var ratio = photo_original_width / $('#crop_image').width();
+      $('#crop_x').val(Math.floor(coords.x * ratio));
+      $('#crop_y').val(Math.floor(coords.y * ratio));
+      $('#crop_w').val(Math.floor(coords.w * ratio));
+      $('#crop_h').val(Math.floor(coords.h * ratio));  
+    }
+  });
+
+</script>

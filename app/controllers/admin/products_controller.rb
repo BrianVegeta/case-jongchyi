@@ -14,12 +14,13 @@ class Admin::ProductsController < Admin::BaseController
 
   # GET /admin/products/new
   def new
-    @product = Product.new
     @photo = Photo.new
+    @product = Product.new
   end
 
   # GET /admin/products/1/edit
   def edit
+    @photo = Photo.new
   end
 
   # POST /admin/products
@@ -65,6 +66,7 @@ class Admin::ProductsController < Admin::BaseController
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
       params.require(:product).permit(
+        :photo_id,
         :title, 
         :content,
         :zh_cn_title,

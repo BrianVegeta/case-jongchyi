@@ -1,4 +1,5 @@
 class Product < ActiveRecord::Base
+	belongs_to :photo
 	def self.cates
 		{
 			1 => I18n.t('product.category.watches'),
@@ -22,4 +23,15 @@ class Product < ActiveRecord::Base
 
 	validates :title,  :presence => true, :length => {:maximum => 254}
 	validates :content,  :presence => true
+
+	before_create :add_photo
+
+	private
+		def add_photo
+			if self.photo.nil?
+				photo = Photo.new
+				photo.save
+				self.photo = photo
+			end
+		end
 end

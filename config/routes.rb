@@ -12,7 +12,7 @@ CaseJongchyi::Application.routes.draw do
     root "base#index"
     resources :users, except: :show
     resources :products
-    resources :photos
+    resources :photos, only: [:create, :update]
   end
   
 end

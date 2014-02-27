@@ -15,7 +15,7 @@
           </div>
         <% end %>
       </span>
-    	<%= image_tag("gray.jpg", class: 'img-rounded', id: 'products_image') %>
+    	<%= image_tag(@photo.avatar.url(:thumb), class: 'img-rounded', id: 'products_image') %>
     </div>
     <div class="col-sm-6">
     	<%= render 'form' %>
@@ -47,7 +47,7 @@
 <%= stylesheet_link_tag "jquery.Jcrop" %>
 <script type="text/javascript">
   $(function () {
-    var crop_image = '<%= image_tag("gray.jpg", id: "crop_image") %>';
+    var crop_image = '<%= image_tag("missing.jpg", id: "crop_image") %>';
     var photo_original_width = 1;
     $('#fileupload').fileupload({
       dataType: 'json',
@@ -61,6 +61,7 @@
         });
         $('.modal-body').html($(crop_image).attr('src', data.result.thumb));
         $('#crop_form').attr('action', data.result.action);
+        $('#product_photo_id').val(data.result.photo_id);
       }
     });
 

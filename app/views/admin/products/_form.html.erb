@@ -1,4 +1,5 @@
 <%= form_for [:admin, @product], :html => { :role => "form", autocomplete: 'off' } do |f| %>
+  <%= f.hidden_field :photo_id %>
   <ul id="myTab" class="nav nav-tabs">
     <li class="active"><a href="#zh-TW" data-toggle="tab">繁體</a></li>
     <li class=""><a href="#zh-CN" data-toggle="tab">簡體</a></li>

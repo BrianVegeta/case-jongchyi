@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140227190547) do
+ActiveRecord::Schema.define(version: 20140227181419) do
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -33,7 +33,6 @@ ActiveRecord::Schema.define(version: 20140227190547) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.integer  "product_id"
   end
 
   create_table "products", force: true do |t|
@@ -43,6 +42,7 @@ ActiveRecord::Schema.define(version: 20140227190547) do
     t.text     "zh_cn_content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "photo_id"
   end
 
   create_table "users", force: true do |t|
