@@ -1,5 +1,21 @@
 <%= form_for [:admin, @product], :html => { :role => "form", autocomplete: 'off' } do |f| %>
   <%= f.hidden_field :photo_id %>
+  <div class="form-group">
+    <%= f.label :'選擇分類', class: "col-sm-2 control-label" %>
+    <div class="row">
+      <div class="col-sm-6">
+        <select class="form-control" name="product[category]">
+          <% Product.sub_cates.each do |cate_id, cates| %>
+            <optgroup label="<%= Product.cates[cate_id] %>">
+              <% cates.each do |sub_id, cate| %>
+                <option value="<%= sub_id %>" <%= @product.category == sub_id ? 'selected' : '' %>><%= cate %></option>
+              <% end %>
+            </optgroup>
+          <% end %>
+        </select>
+      </div>
+    </div>
+  </div>
   <ul id="myTab" class="nav nav-tabs">
     <li class="active"><a href="#zh-TW" data-toggle="tab">繁體</a></li>
     <li class=""><a href="#zh-CN" data-toggle="tab">簡體</a></li>

@@ -21,8 +21,34 @@ class Product < ActiveRecord::Base
 		}
 	end
 
+	def self.sub_cates_keys
+		keys = []
+		Product.sub_cates.each_pair do |k, v|
+			v.each_pair do |k, v|
+				keys << k
+			end
+		end
+		keys
+	end
+
+	def self.get_cate_name(id)
+		name = ''
+		Product.sub_cates.each_pair do |k, v|
+			unless v[id].nil?
+				name = Product.cates[k] + ' / ' + v[id]
+				break
+			end
+		end
+		name
+	end
+
+	def self.test
+		Product.sub_cates[1][4]
+	end
+
 	validates :title,  :presence => true, :length => {:maximum => 254}
 	validates :content,  :presence => true
+	validates :category,  :presence => true, inclusion: { in: Product.sub_cates_keys}
 
 	before_create :add_photo
 
