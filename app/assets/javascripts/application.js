@@ -15,4 +15,6 @@
 //= require ckeditor-jquery
 //= require turbolinks
 //= require bootstrap
+//= require jquery-fileupload/basic
+//= require jquery.Jcrop
 //= require_tree .

@@ -15,6 +15,7 @@ class Admin::ProductsController < Admin::BaseController
   # GET /admin/products/new
   def new
     @product = Product.new
+    @photo = Photo.new
   end
 
   # GET /admin/products/1/edit

@@ -41,3 +41,9 @@ end
 gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'rails-i18n', '~> 4.0.0'
 gem 'ckeditor_rails'
+gem "mini_magick"
+gem 'cocaine'
+gem "paperclip"
+gem 'jquery-fileupload-rails'
+gem 'jcrop-rails-v2'
+
