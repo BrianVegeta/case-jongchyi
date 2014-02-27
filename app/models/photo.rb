@@ -2,7 +2,8 @@ class Photo < ActiveRecord::Base
 	has_one :product
 	has_attached_file :avatar, 
 										:styles => { 
-											:thumb => "1000x1000>" 
+											:thumb => "1000x1000>",
+											:small => "100x100>" 
 										}, 
 										:default_url => "missing.jpg",
 										:processors => [:cropper]
