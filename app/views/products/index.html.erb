@@ -1,25 +1,60 @@
-<h1>Listing products</h1>
+<style type="text/css">
+.modal .modal-dialog { 
+  width: 900px; 
+}
+</style>
+<div class="col-sm-10 col-sm-offset-1">
+  <% @products.each_pair do |k, sub_products|%>
+    <div class="col-sm-10 col-sm-offset-1">
+      <h1><%= @sub_cates[k] %> <small><%= Product.cates[params[:category].to_i] %></small></h1>
+      <hr>
+      <% sub_products.each do |product|%>
+        <div class="col-sm-4">
+          <a class="product_item" data-product-id="<%= product.id %>" >
+            <div style="width: 216px; height: 216px;">
+              <%= image_tag(product.photo.avatar.url(:thumb), class: 'img-rounded') %>
+            </div>  
+            <h4 class="text-center"><%= product.trans_title %> </h4>
+          </a>  
+        </div>
+      <% end -%>
+    </div>    
+  <% end -%>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel"></h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-sm-6">
+            <%= image_tag('missing.jpg', class: 'img-rounded', id: 'product_image') %>
+          </div>
+          <div class="col-sm-6">
+            <div id="product_content">
 
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
 
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Product', new_product_path %>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  var show_product_path = '<%= product_path(:id, :json) %>';
+  $('.product_item').click(function() {
+    var product_path = show_product_path.replace('id', $(this).data('productId'));
+    $.get(product_path, function(response) {
+      $('#myModalLabel').html(response.title);
+      $('#product_content').html(response.content);
+      $('#product_image').attr('src', response.thumb);
+      $('#myModal').modal('show');
+    });
+    
+  });
+</script>

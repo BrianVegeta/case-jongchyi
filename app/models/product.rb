@@ -42,8 +42,20 @@ class Product < ActiveRecord::Base
 		name
 	end
 
-	def self.test
-		Product.sub_cates[1][4]
+	def trans_title
+		if I18n.locale != :'zh-TW' && send(locale_prefix('title')).present?
+			send(locale_prefix('title'))
+		else
+			title
+		end
+	end
+
+	def trans_content
+		if I18n.locale != :'zh-TW' && send(locale_prefix('content')).present?
+			send(locale_prefix('content'))
+		else
+			content
+		end
 	end
 
 	validates :title,  :presence => true, :length => {:maximum => 254}
@@ -59,5 +71,9 @@ class Product < ActiveRecord::Base
 				photo.save
 				self.photo = photo
 			end
+		end
+
+		def locale_prefix(column_name)
+			I18n.locale.to_s.downcase.gsub('-', '_') + '_' + column_name
 		end
 end

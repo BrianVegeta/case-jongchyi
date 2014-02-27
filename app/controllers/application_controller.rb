@@ -79,4 +79,8 @@ class ApplicationController < ActionController::Base
     end
     return error_msg
   end
+
+  def render_404
+    raise ActionController::RoutingError.new('Not Found')
+  end
 end

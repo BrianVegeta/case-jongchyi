@@ -4,12 +4,27 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    @sub_cates = Product.sub_cates[params[:category].to_i]
+    render_404 if @sub_cates.nil?
+    @products = {}
+    @sub_cates.each_pair do |k, name|
+      sub_products = Product.where(category: k)
+      @products[k] = sub_products if sub_products.present?
+    end
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
+    respond_to do |format|
+      format.json { render json: {
+          title: @product.trans_title,
+          content: @product.trans_content,
+          thumb: view_context.image_path( @product.photo.avatar.url(:thumb) )
+        } 
+      }
+      
+    end
   end
 
   # GET /products/new

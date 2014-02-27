@@ -1,5 +1,9 @@
 CaseJongchyi::Application.routes.draw do
-  resources :products
+  resources :products, except: [:index] do 
+    collection do
+      get '/:category/:title', :to => "products#index", :as => ''
+    end
+  end
 
   root "pages#home"    
   get "home", to: "pages#home", as: "home"
