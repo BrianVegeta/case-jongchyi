@@ -1,4 +1,43 @@
 <style type="text/css">
+  .quality {
+    background-image: url('<%= asset_path("quality.jpg") %>'); 
+    background-size: 100%;
+  }
+  .quality > .content {
+    top: 50%;
+    color: white;
+    margin-top: -128px;
+  }
+  .quality > .content > h1 {
+    font-size: 72px;
+  }
+  .quality > .content > p {
+    padding-left: 20px;
+  }
+</style>
+<div class="active" style="background-color: red; height: 100%; min-height:100%;">
+
+</div>
+<div style="background-color: green; height: 100%; min-height:100%;">
+
+</div>
+<div class="quality" style="background-color: blue; height: 100%; min-height:100%;">
+  <div class="col-sm-6 col-sm-offset-2 content">
+    <h1><%= t('home_page.quality.title') %></h1>
+    <br>
+    <br>
+    <p class="lead">
+      <%= t('home_page.quality.content_1') %>
+      <br>
+      <%= t('home_page.quality.content_2') %>
+      <br>
+      <%= t('home_page.quality.content_3') %>
+    </p>
+  </div>
+</div>
+
+
+<style type="text/css">
 </style>
 <br>
 <br>

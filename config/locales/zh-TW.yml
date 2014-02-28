@@ -43,6 +43,12 @@ zh-TW:
       content_3: '我們多年的刀具製作經驗可以幫助您打造理想中的刀具，'
       content_4: '只要您提供給我們製造刀具必要的基本資訊或圖紙。'
       sub_content: '既然是我們出廠的刀具，當然享有我們的品質保證。'  
+  home_page: 
+    quality: 
+      title: 值得信賴的品質
+      content_1: 每把刀具都經過反覆檢測與修改
+      content_2: 直到達成您對精密刀具要求
+      content_3: 並且提供完整的檢測報告
   date:
     abbr_day_names:
     - 日

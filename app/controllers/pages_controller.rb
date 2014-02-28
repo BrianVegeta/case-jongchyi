@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   ]
 
   def home
-  	
+  	render layout: 'slide'
   end
   
   def inside
