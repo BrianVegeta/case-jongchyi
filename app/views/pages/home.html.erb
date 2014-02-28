@@ -1,4 +1,7 @@
 <style type="text/css">
+  body {
+    overflow: hidden;
+  }
   .content > h1 {
     font-size: 72px;
   }
@@ -91,8 +94,12 @@
     }
 
     function slide() {
+      var animating = false;
       $(window).on('mousewheel DOMMouseScroll', function(e){
         e.preventDefault();      
+        if (animating) {
+          return false;
+        };
         var delta = e.originalEvent.detail < 0 || e.originalEvent.wheelDelta > 0 ? 1 : -1;
         //get the current active slide
         var $active = $('body > .active');
@@ -100,22 +107,34 @@
         if(delta < 0) { 
             //mousewheel down
             var $next = $active.next();
-            console.log($next.attr('class'));
             //check if there's a next slide available
             if($next.length){
+                animating = true;
                 //animate scrolling to the next slides offset top
-               $('body, html').stop(true).animate({scrollTop:$next.offset().top},'slow');
-               //move also the indicator class 'active'
-               $next.addClass('active').siblings().removeClass('active');
+                $(window).unbind(); 
+                $('body, html').stop(true).animate({scrollTop:$next.offset().top},'slow', function() {
+                  setTimeout(function() {
+                    slide();
+                    animating = false;
+                    $next.addClass('active').siblings().removeClass('active');
+                  }, 1000);
+                });
             }
 
         }else{
             //mousewheel up
             var $prev = $active.prev();
             if($prev.length){
+                animating = true;
+                $(window).unbind();
                  //animate scrolling to the previous slides offset top
-                $('body, html').stop(true).animate({scrollTop:$prev.offset().top},'slow'); 
-                $prev.addClass('active').siblings().removeClass('active');
+                $('body, html').stop(true).animate({scrollTop:$prev.offset().top},'slow', function() {
+                  setTimeout(function() {
+                    slide();
+                    animating = false;
+                    $prev.addClass('active').siblings().removeClass('active');
+                  }, 1000);
+                });
             }
         }
       });  
