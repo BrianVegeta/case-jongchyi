@@ -49,6 +49,9 @@ zh-TW:
       content_1: 每把刀具都經過反覆檢測與修改
       content_2: 直到達成您對精密刀具要求
       content_3: 並且提供完整的檢測報告
+    crafts:
+      title: 奈米等級工藝
+      content_1: UPC單晶鑽石超精密切削刀具帶來光學級鏡面加工
   date:
     abbr_day_names:
     - 日
