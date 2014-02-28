@@ -11,6 +11,33 @@ zh-TW:
   home: 忠祺鑽石企業 ・ 忠億精密五金設備
   nav_support: 支援服務
   nav_contact: 聯絡我們
+  support_page:
+    grinding: 
+      title: 工欲善其事 必先利其器
+      content_1: 雖然刀具都是世上數一數二堅硬的材質，
+      content_2: 在長時間的使用下還是會造成一定的正常耗損。
+      content_3: 當刀具銳利不再，
+      content_4: 就該是翻修的時候了。
+      content_5: 我們整修後，
+      content_6: 將會讓刀具恢復到往日的切削品質。
+      sub_content: 即使不是我們出廠的刀具，也能享有翻修的服務。
+
+    reform: 
+      title: '環保且經濟的聰明選擇' 
+      content_1: '刀具從生產線退役下來該何去何從，'
+      content_2: '何不用更環保經濟的方式延長刀具的使用壽命？'
+      content_3: '我們提供規格修改的服務，'
+      content_4: '讓沒有用到又棄之可惜的昂貴刀具可以重回產線。'
+      content_5: '用聰明的方式降低成本。'
+      sub_content: '即使不是我們出廠的刀具，也能享有改造的服務。'
+
+    custom: 
+      title: '開創先河 方能先機在握' 
+      content_1: '還沒有找到您合適使用的加工刀具？'
+      content_2: '何不自己動手創造屬於您專屬的！'
+      content_3: '我們多年的刀具製作經驗可以幫助您打造理想中的刀具，'
+      content_4: '只要您提供給我們製造刀具必要的基本資訊或圖紙。'
+      sub_content: '既然是我們出廠的刀具，當然享有我們的品質保證。'  
   date:
     abbr_day_names:
     - 日
