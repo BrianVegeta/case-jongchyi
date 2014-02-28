@@ -93,6 +93,16 @@
       }, number);
     }
 
+    function check_animate(name) {
+      switch (name) {
+        case 'crafts':
+          animat_crafts();
+          break;
+        case '':
+          break; 
+      }
+    }
+
     function slide() {
       var animating = false;
       $(window).on('mousewheel DOMMouseScroll', function(e){
@@ -113,6 +123,7 @@
                 //animate scrolling to the next slides offset top
                 $(window).unbind(); 
                 $('body, html').stop(true).animate({scrollTop:$next.offset().top},'slow', function() {
+                  check_animate($next.attr('class'));
                   setTimeout(function() {
                     slide();
                     animating = false;
@@ -129,6 +140,7 @@
                 $(window).unbind();
                  //animate scrolling to the previous slides offset top
                 $('body, html').stop(true).animate({scrollTop:$prev.offset().top},'slow', function() {
+                  check_animate($prev.attr('class'));
                   setTimeout(function() {
                     slide();
                     animating = false;
@@ -143,9 +155,7 @@
     setTimeout(function() {
       animat_crafts();
     }, 2000);
-    // $(window).scroll(function() {
-    //   console.log($('.number').offset().top - $(window).scrollTop());
-    // });
+    
     
   });
 
