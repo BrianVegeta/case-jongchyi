@@ -44,6 +44,18 @@ zh-TW:
       content_4: '只要您提供給我們製造刀具必要的基本資訊或圖紙。'
       sub_content: '既然是我們出廠的刀具，當然享有我們的品質保證。'  
   home_page: 
+    tech:
+      title: 細如毫末
+      content_1: 特製極小刀尖半徑的CBN刀具
+      content_2: 是硬化模具微細切削加工的利器
+      radius: 刀尖半徑
+    research:
+      title: 與您一齊進步
+      content_1: 我們樂意接受挑戰
+      content_2: 與客戶共同開發新的加工刀具
+      content_3: 並經由與客戶的緊密合作
+      content_4: 建立起長期並且相互依賴的
+      content_5: 夥伴關係
     quality: 
       title: 值得信賴的品質
       content_1: 每把刀具都經過反覆檢測與修改
@@ -52,6 +64,27 @@ zh-TW:
     crafts:
       title: 奈米等級工藝
       content_1: UPC單晶鑽石超精密切削刀具帶來光學級鏡面加工
+    material:
+      subscript: 鑽石切削鐵族合金時會讓鑽石刀具迅速石墨化造成不正常磨損，鈦、鉭、鋯、鎢、鉬等易與鑽石的碳結合成碳化物，也不適用鑽石刀具加工。
+      material_1: 
+        title: 天然鑽石
+        content: 鑽石是在工業上人類已知的最堅硬材質。我們特選每顆作為刀具的天然鑽石，並憑藉我們多年的經驗，選擇最適宜的晶體方向，以實現最佳的表面光潔度與耐磨性。
+      material_2:
+        title: 合成單晶鑽石
+        content: 人造鑽石是天然鑽石的良好替代材料，與天然材料的化學特性近乎相同，並俱有價格優勢。
+        content_1: 依照製造工藝不同分爲：
+        content_2: HPHT（高溫高壓）鑽石
+        content_3: CVD（化學氣相沉積）鑽石
+      material_3:
+        title: 合成聚晶鑽石
+        content: 在高溫高壓下將金鋼石微粉加溶劑利用真空燒結成型的多晶體人造材料，與傳統硬質合金刀具相比，硬度、耐磨性、壽命、切削速度、粗糙度皆有極大優勢。
+      material_4:
+        title: 立方氮化硼
+        content: 立方氮化硼（CBN）是僅次於人造金剛石的世界上第二堅硬的材料，由六方氮化硼在類似於石墨合成人造金剛石的條件下合成。特別的是，CBN剛好填補了鑽石無法切削黑色金屬（鐵、鉻和錳合金）的空缺。
+    support:
+      grinding: 修磨
+      reform: 改造
+      custom: 訂製
   date:
     abbr_day_names:
     - 日
