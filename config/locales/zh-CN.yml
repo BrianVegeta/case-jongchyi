@@ -42,6 +42,13 @@ zh-CN:
       content_4: 只要您提供给我们制造刀具必要的基本资讯或图纸。
       sub_content: 既然是我们出厂的刀具，当然享有我们的品质保证。
   home_page: 
+    nav_progress: 
+      crafts: 工艺
+      tech: 技术
+      quality: 品质
+      research: R & D
+      material: 材料
+      support: 服务
     tech:
       title: 细如毫末
       content_1: 特制极小刀尖半径的CBN刀具

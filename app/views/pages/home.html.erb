@@ -98,8 +98,19 @@
     font-size: 40px;
     box-shadow:4px 4px 3px rgba(20%,20%,40%,0.5);
   }
+  #progress-nav {
+    position: fixed;
+    z-index: 100;
+    margin-top: -32px;
+    right: 17px;
+    top: 50%;
+    opacity: 1;
+  }
+  #progress-nav ul {
+    list-style: none outside;
+  }
 </style>
-<div class="active crafts slide">
+<div id="crafts" class="active crafts slide">
   <div class="col-sm-8 col-sm-offset-2 text-center content">
     <h1><%= t('home_page.crafts.title') %></h1>
     <p class="lead">
@@ -118,7 +129,7 @@
     </div>  
   </div>
 </div>
-<div class="tech slide">
+<div id="tech" class="tech slide">
   <div class="col-sm-8 col-sm-offset-2 text-right content">
     <div class="col-sm-10 col-sm-offset-1">
       <div class="relative-img">
@@ -143,7 +154,7 @@
     </div>  
   </div>
 </div>
-<div class="quality slide">
+<div id="quality" class="quality slide">
   <div class="col-sm-6 col-sm-offset-2 content">
     <h1><%= t('home_page.quality.title') %></h1>
     <br>
@@ -157,7 +168,7 @@
     </p>
   </div>
 </div>
-<div class="research slide">
+<div id="research" class="research slide">
   <div class="col-sm-6 col-sm-offset-3 text-center content">
     <h1><%= t('home_page.research.title') %></h1>
     <div class="col-sm-10 col-sm-offset-1">
@@ -178,7 +189,7 @@
     </div>
   </div>
 </div>
-<div class="material slide">
+<div id="material" class="material slide">
   <div class="col-sm-6 col-sm-offset-3 content">
     <ul id="myTab" class="nav nav-tabs">
       <li class="active">
@@ -263,7 +274,7 @@
     </div>
   </div>  
 </div>
-<div class="support slide">
+<div id="support" class="support slide">
   <div class="col-sm-6 col-sm-offset-3 text-center content">
     <div class="col-sm-4">
       <%= link_to support_path(anchor: 'grinding') do %>
@@ -296,6 +307,34 @@
   </div>
 </div>
 
+<nav id="progress-nav">
+  <ul>
+    <li class="text-right">
+      <span class="hover-text"><%= t('home_page.nav_progress.crafts') %></span> 
+      <a href="#crafts"><i class="fa fa-circle-o"></i></a>
+    </li>
+    <li class="text-right">
+      <span class="hover-text"><%= t('home_page.nav_progress.tech') %></span> 
+      <a href="#tech"><i class="fa fa-dot-circle-o"></i></a>  
+    </li>
+    <li class="text-right">
+      <span class="hover-text"><%= t('home_page.nav_progress.quality') %></span> 
+      <a href="#quality"><i class="fa fa-circle-o"></i></a>  
+    </li>
+    <li class="text-right">
+      <span class="hover-text"><%= t('home_page.nav_progress.research') %></span> 
+      <a href="#research"><i class="fa fa-circle-o"></i></a>
+    </li>
+    <li class="text-right">
+      <span class="hover-text"><%= t('home_page.nav_progress.material') %></span> 
+      <a href="#material"><i class="fa fa-circle-o"></i></a>
+    </li>
+    <li class="text-right">
+      <span class="hover-text"><%= t('home_page.nav_progress.support') %></span> 
+      <a href="#support"><i class="fa fa-circle-o"></i></a>
+    </li>
+  </ul>
+</nav>
 
 <script type="text/javascript">
   $(function() {
@@ -361,7 +400,7 @@
                 //animate scrolling to the next slides offset top
                 $(window).unbind(); 
                 $('body, html').stop(true).animate({scrollTop:$next.offset().top},'slow', function() {
-                  check_animate($next.attr('class'));
+                  check_animate($next.attr('id'));
                   setTimeout(function() {
                     slide();
                     animating = false;
@@ -378,7 +417,7 @@
                 $(window).unbind();
                  //animate scrolling to the previous slides offset top
                 $('body, html').stop(true).animate({scrollTop:$prev.offset().top},'slow', function() {
-                  check_animate($prev.attr('class'));
+                  check_animate($prev.attr('id'));
                   setTimeout(function() {
                     slide();
                     animating = false;

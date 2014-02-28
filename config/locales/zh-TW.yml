@@ -44,6 +44,13 @@ zh-TW:
       content_4: '只要您提供給我們製造刀具必要的基本資訊或圖紙。'
       sub_content: '既然是我們出廠的刀具，當然享有我們的品質保證。'  
   home_page: 
+    nav_progress: 
+      crafts: 工藝
+      tech: 技術
+      quality: 品質
+      research: R & D
+      material: 材料
+      support: 服務
     tech:
       title: 細如毫末
       content_1: 特製極小刀尖半徑的CBN刀具
