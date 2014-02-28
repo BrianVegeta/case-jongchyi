@@ -9,6 +9,7 @@ CaseJongchyi::Application.routes.draw do
   get "home", to: "pages#home", as: "home"
   get "inside", to: "pages#inside", as: "inside"
   get "support", to: "pages#support", as: "support"
+  get "contact", to: "pages#contact", as: "contact"
   
     
   devise_for :users, skip: :passwords, :controllers => { sessions: 'admin/sessions' }

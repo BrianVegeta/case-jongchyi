@@ -8,9 +8,14 @@ zh-CN:
       chassis_aluminum: 机壳&铝板
       exclusive_custom: 专属订制
     sample: '产品范例'
-  home: 忠祺钻石企业 · 忠亿精密五金设备  
+  home: 忠祺钻石企业 · 忠亿精密五金设备
+  company: 忠祺钻石企业有限公司
+  company_cn: 深圳忠亿精密五金设备有限公司
   nav_support: 支援服务
   nav_contact: 联络我们
+  contact_page:
+    address: 台南市归仁区沙仑里二甲92号
+    address_cn: 深圳市（邮编518000）布吉京南路9号吉盛昌工业区2号B一楼
   support_page:
     grinding: 
       title: 工欲善其事 必先利其器
