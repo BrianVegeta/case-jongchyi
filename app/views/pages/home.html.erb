@@ -12,79 +12,79 @@
   .content {
     top: 50%;
   }
-  .quality {
+  #quality {
     background-image: url('<%= asset_path("quality.jpg") %>'); 
     background-size: 100%;
   }
-  .quality > .content {
+  #quality > .content {
     color: white;
     margin-top: -128px;
   }
-  .quality > .content > p {
+  #quality > .content > p {
     padding-left: 20px;
   }
-  .research > .content{
+  #research > .content{
     margin-top: -263px; 
   }
-  .tech > .content{
+  #tech > .content{
     margin-top: -194px; 
   }
-  .tech .sub-content {
+  #tech .sub-content {
     position: absolute; 
     top: 10px; 
     left: 330px; 
     width: 300px; 
   }
-  .tech .measurement-lg {
+  #tech .measurement-lg {
     position: absolute; 
     top: 140px; 
     left: 100px; 
     width: 300px; 
   }
-  .tech .measurement-sm {
+  #tech .measurement-sm {
     position: absolute; 
     top: 140px; 
     left: 300px; 
     width: 300px; 
   }
-  .tech .number {
+  #tech .number {
     font-size: 30px;
   }
-  .crafts > .content {
+  #crafts > .content {
     margin-top: -231px; 
   }
   .relative-img {
     position: relative; 
     width: 100%;
   }
-  .crafts .measurement {
+  #crafts .measurement {
     position: absolute; 
     top: 50px; 
     left: 350px; 
     width: 150px; 
   }
-  .crafts .measurement .number {
+  #crafts .measurement .number {
     font-size: 52px;
     line-height: 1;
     width: 60px;
   }
-  .crafts .measurement .unit {
+  #crafts .measurement .unit {
     font-size: 28px;
   }
-  .material .content {
+  #material .content {
     background-color: white;
     padding: 10px;
     border: 1px solid #dddddd;
     border-radius: 4px;
     margin-top: -132px; 
   }
-  .material p {
+  #material p {
     font-size: 18px;
   }
-  .support .content {
+  #support .content {
     margin-top: -153px; 
   }
-  .support .function {
+  #support .function {
     background-color: yellow; 
     display: inline-block;
     width: 150px;
@@ -94,7 +94,7 @@
     padding: 35px;
     box-shadow:4px 4px 3px rgba(20%,20%,40%,0.5);
   }
-  .support .btn-warning {
+  #support .btn-warning {
     font-size: 40px;
     box-shadow:4px 4px 3px rgba(20%,20%,40%,0.5);
   }
@@ -114,6 +114,7 @@
   }
   #progress-nav ul .hover-text {
     display: none;
+    color: #dddddd;
   }
 </style>
 <div id="crafts" class="active crafts slide">
@@ -317,27 +318,27 @@
   <ul>
     <li class="text-right">
       <span class="hover-text"><%= t('home_page.nav_progress.crafts') %></span> 
-      <a href="#crafts"><i class="fa fa-circle-o"></i></a>
+      <a class="crafts" href="#crafts"><i class="fa fa-circle-o"></i></a>
     </li>
     <li class="text-right">
       <span class="hover-text"><%= t('home_page.nav_progress.tech') %></span> 
-      <a href="#tech"><i class="fa fa-dot-circle-o"></i></a>  
+      <a class="tech" href="#tech"><i class="fa fa-circle-o"></i></a>  
     </li>
     <li class="text-right">
       <span class="hover-text"><%= t('home_page.nav_progress.quality') %></span> 
-      <a href="#quality"><i class="fa fa-circle-o"></i></a>  
+      <a class="quality" href="#quality"><i class="fa fa-circle-o"></i></a>  
     </li>
     <li class="text-right">
       <span class="hover-text"><%= t('home_page.nav_progress.research') %></span> 
-      <a href="#research"><i class="fa fa-circle-o"></i></a>
+      <a class="research" href="#research"><i class="fa fa-circle-o"></i></a>
     </li>
     <li class="text-right">
       <span class="hover-text"><%= t('home_page.nav_progress.material') %></span> 
-      <a href="#material"><i class="fa fa-circle-o"></i></a>
+      <a class="material" href="#material"><i class="fa fa-circle-o"></i></a>
     </li>
     <li class="text-right">
       <span class="hover-text"><%= t('home_page.nav_progress.support') %></span> 
-      <a href="#support"><i class="fa fa-circle-o"></i></a>
+      <a class="support" href="#support"><i class="fa fa-circle-o"></i></a>
     </li>
   </ul>
 </nav>
@@ -440,6 +441,43 @@
       animat_tech_lg();
       animat_tech_sm();
     }, 2000);
+
+    $(document).scroll(function() {
+      check_slide_visible('crafts', 0, function() {
+        active_progress('crafts');
+      });
+      check_slide_visible('tech', 0, function() {
+        active_progress('tech');
+      });
+      check_slide_visible('quality', 0, function() {
+        active_progress('quality');
+      });
+      check_slide_visible('research', 0, function() {
+        active_progress('research');
+      });
+      check_slide_visible('material', 0, function() {
+        active_progress('material');
+      });
+      check_slide_visible('support', 0, function() {
+        active_progress('support');
+      });
+    })
+
+    function active_progress(class_name) {
+      $('#progress-nav').find('i').removeClass('fa-dot-circle-o').addClass('fa-circle-o');
+      $('#progress-nav').find('.' + class_name).find('i').removeClass('fa-circle-o').addClass('fa-dot-circle-o');
+    }
+
+    function check_slide_visible(id, top, callback) {
+      var top_position = $('#' + id).offset().top - $(window).scrollTop();
+      if (top_position >= top && top_position < $(window).height() / 2) {
+        callback();
+      };
+    }
+
+    $(window).resize(function() {
+      // console.log($(window).height());
+    });
     
     $('#progress-nav').find('a').mouseover(function() {
       $(this).prev().show();
