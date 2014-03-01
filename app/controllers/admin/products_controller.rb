@@ -4,7 +4,14 @@ class Admin::ProductsController < Admin::BaseController
   # GET /admin/products
   # GET /admin/products.json
   def index
-    @products = Product.order(:id).page params[:page]
+    category = params[:category]
+    category = 1 if category.nil?
+
+    sub_cates = Product.sub_cates[category.to_i]
+    render_404 if sub_cates.nil?
+    
+    sub_cates_keys = sub_cates.keys
+    @products = Product.where('category IN (?)', sub_cates_keys).order(:id).page params[:page]
   end
 
   # GET /admin/products/1

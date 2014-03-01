@@ -1,5 +1,29 @@
+<style type="text/css">
+  .category {
+    margin: 20px 20px 20px 0;
+  }
+  .category .btn-default {
+    color: #373737;
+    background-color: white;
+  }
+  .category .btn-default:hover {
+    color: white;
+    background-color: #428bca;
+  }
+</style>
 <h1>產品 <small>列表</small></h1>
-<%= paginate @products, theme: 'twitter-bootstrap-3' %>
+<div class="row">
+  <div class="col-sm-12">
+    <%= paginate @products, theme: 'twitter-bootstrap-3' %>
+    <div class="category pull-left">
+      <div class="btn-group">
+        <% Product.cates.each_pair do |id, name| %>
+          <%= link_to name, admin_products_path(category: id), class: 'btn ' + (id.to_s == params[:category] ? 'btn-primary' : 'btn-default') %>
+        <% end -%>
+      </div>
+    </div>  
+  </div>    
+</div>
 <table class="table table-striped ">
   <thead>
     <tr>
@@ -12,7 +36,11 @@
       <th width="120"><%= link_to '新增產品', new_admin_product_path, class: 'btn btn-primary btn-sm' %></th>
     </tr>
   </thead>
-  
+  <% if @products.size == 0 %>
+    <tr>
+      <td colspan="7" class="text-center">目前此分類無產品</td>
+    </tr>
+  <% end %>
   <% @products.each do |product| %>
   
   <tr>

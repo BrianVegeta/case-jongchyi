@@ -8,6 +8,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <style type="text/css">
+    #wrap {
+      margin-bottom: -20px;
+    }
+  </style>
   <div id="wrap">
     <% if user_signed_in? %>
       <%= render 'layouts/admin_header' %>
