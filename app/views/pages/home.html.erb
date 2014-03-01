@@ -109,6 +109,12 @@
   #progress-nav ul {
     list-style: none outside;
   }
+  #progress-nav ul a {
+    color: black;
+  }
+  #progress-nav ul .hover-text {
+    display: none;
+  }
 </style>
 <div id="crafts" class="active crafts slide">
   <div class="col-sm-8 col-sm-offset-2 text-center content">
@@ -435,6 +441,12 @@
       animat_tech_sm();
     }, 2000);
     
+    $('#progress-nav').find('a').mouseover(function() {
+      $(this).prev().show();
+    });
+    $('#progress-nav').find('a').mouseout(function() {
+      $(this).prev().hide();
+    });
     
   });
 
