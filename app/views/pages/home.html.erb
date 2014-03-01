@@ -7,7 +7,7 @@
     min-height:100%;
   }
   .content h1 {
-    font-size: 72px;
+    font-size: 60px;
   }
   .content {
     top: 50%;
@@ -24,7 +24,8 @@
     padding-left: 20px;
   }
   #research {
-    background-color: #192635;
+  background-color: #192635;
+  background-image: url('<%= asset_path("blueprint.png") %>'); 
     color: white;
   }
   #research .content{
@@ -35,20 +36,20 @@
   }
   #tech .sub-content {
     position: absolute; 
-    top: 10px; 
-    left: 330px; 
-    width: 300px; 
+    top: 0px; 
+    left: 380px; 
+    /*width: 300px; */
   }
   #tech .measurement-lg {
     position: absolute; 
-    top: 140px; 
-    left: 100px; 
+    top: 85px; 
+    left: 240px; 
     /*width: 300px; */
   }
   #tech .measurement-sm {
     position: absolute; 
-    top: 140px; 
-    left: 300px; 
+    top: 165px; 
+    left: 510px; 
     /* width: 300px; */
   }
   #tech .number {
@@ -80,7 +81,7 @@
     padding: 10px;
     border: 1px solid #dddddd;
     border-radius: 4px;
-    margin-top: -132px; 
+    margin-top: -186px; 
   }
   #material p {
     font-size: 18px;
@@ -172,16 +173,16 @@
               <%= t('home_page.tech.content_1') %><br><%= t('home_page.tech.content_2') %>
             </p>
           </div>
-          <h4 class="measurement-lg">
+          <h5 class="measurement-lg">
             <%= t('home_page.tech.radius') %>
             <span class="number">1.0</span>
             nm
-          </h4>
-          <h4 class="measurement-sm">
+          </h5>
+          <h5 class="measurement-sm">
             <%= t('home_page.tech.radius') %>
             <span class="number">0.03</span>
             nm
-          </h4>
+          </h5>
         </div>
       </div>  
     </div>
@@ -315,21 +316,21 @@
       <div class="col-sm-4">
         <%= link_to support_path(anchor: 'grinding') do %>
           <div class="grinding function">
-            <h1><%= t('home_page.support.grinding') %></h1>
+            <h2><%= t('home_page.support.grinding') %></h2>
           </div>
         <% end -%>
       </div>
       <div class="col-sm-4">
         <%= link_to support_path(anchor: :reform) do %>
           <div class="reform function">
-            <h1><%= t('home_page.support.reform') %></h1>
+            <h2><%= t('home_page.support.reform') %></h2>
           </div>
         <% end -%>
       </div>
       <div class="col-sm-4">
         <%= link_to support_path(anchor: :custom) do %>
           <div class="custom function">
-            <h1><%= t('home_page.support.custom') %></h1>
+            <h2><%= t('home_page.support.custom') %></h2>
           </div>
         <% end -%>
       </div>
@@ -474,26 +475,44 @@
 
     $(document).scroll(function() {
       check_slide_visible('crafts', 0, function() {
+        slide_active('crafts');
         active_progress('crafts');
       });
       check_slide_visible('tech', 0, function() {
+        slide_active('tech');
         active_progress('tech');
       });
       check_slide_visible('quality', 0, function() {
+        slide_active('quality');
         active_progress('quality');
+        inverse_progress();
       });
       check_slide_visible('research', 0, function() {
+        slide_active('research');
         active_progress('research');
+        inverse_progress();
       });
       check_slide_visible('material', 0, function() {
+        slide_active('material');
         active_progress('material');
       });
       check_slide_visible('support', 0, function() {
+        slide_active('support');
         active_progress('support');
       });
     })
 
+    function slide_active(id) {
+      $('.slide').removeClass('active')
+      $('#' + id).addClass('active');
+    }
+
+    function inverse_progress() {
+      $('#progress-nav').find('i').addClass('fa-inverse');
+    }
+
     function active_progress(class_name) {
+      $('#progress-nav').find('i').removeClass('fa-inverse');
       $('#progress-nav').find('i').removeClass('fa-dot-circle-o').addClass('fa-circle-o');
       $('#progress-nav').find('.' + class_name).find('i').removeClass('fa-circle-o').addClass('fa-dot-circle-o');
     }
