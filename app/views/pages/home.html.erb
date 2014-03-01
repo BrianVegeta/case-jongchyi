@@ -119,8 +119,15 @@
   }
   #progress-nav ul .hover-text {
     display: none;
+    color: #373737;
+  }
+  #progress-nav i {
+    font-size: 10px;
+  }
+  #progress-nav .inverse .hover-text {
     color: #dddddd;
   }
+  
   @media (max-width: 768px) {
     .content h1 {
       font-size: 48px;
@@ -398,7 +405,7 @@
 
     function animat_tech_lg() {
       var $tech_number = $('.tech').find('.measurement-lg').find('.number');
-      number_animate(0.1, '1.0', $tech_number, 0.1, 200, 10);
+      number_animate(0.1, '1.0', $tech_number, 0.1, 100, 10);
     }
 
     function animat_tech_sm() {
@@ -509,12 +516,14 @@
 
     function inverse_progress() {
       $('#progress-nav').find('i').addClass('fa-inverse');
+      $('#progress-nav').find('li').addClass('inverse');
     }
 
     function active_progress(class_name) {
       $('#progress-nav').find('i').removeClass('fa-inverse');
-      $('#progress-nav').find('i').removeClass('fa-dot-circle-o').addClass('fa-circle-o');
-      $('#progress-nav').find('.' + class_name).find('i').removeClass('fa-circle-o').addClass('fa-dot-circle-o');
+      $('#progress-nav').find('i').removeClass('fa-circle').addClass('fa-circle-o');
+      $('#progress-nav').find('.' + class_name).find('i').removeClass('fa-circle-o').addClass('fa-circle');
+      $('#progress-nav').find('li').removeClass('inverse');
     }
 
     function check_slide_visible(id, top, callback) {
@@ -526,7 +535,7 @@
 
     function check_slide_content_height() {
       $('.slide').find('.content').each(function() {
-        console.log($(this).height());
+        // console.log($(this).height());
       });
     }
 
