@@ -1,4 +1,7 @@
 class Product < ActiveRecord::Base
+	# Pagination
+  paginates_per 5
+
 	belongs_to :photo
 	def self.cates
 		{

@@ -22,6 +22,7 @@ end
 
 # Paging
 gem 'kaminari', '~> 0.15.0'
+gem 'bootstrap-kaminari-views'
 
 # Slugs and friendly id's
 gem 'friendly_id', '~> 5.0.2'
