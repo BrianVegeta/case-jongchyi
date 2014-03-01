@@ -11,7 +11,7 @@ class PagesController < ApplicationController
   end 
     
   def support
-  	
+
   end
 
   def contact
