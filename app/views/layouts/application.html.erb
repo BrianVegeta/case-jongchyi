@@ -9,6 +9,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <style type="text/css">
+    body {
+      background-image: url('<%= asset_path("squared_metal_@2X.png") %>'); 
+    }
+  </style>
   <div id="wrap" style="padding-top: 50px;">
     <header>
       <%= render 'layouts/navigation' %>
