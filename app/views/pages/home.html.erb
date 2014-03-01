@@ -6,7 +6,7 @@
     height: 100%; 
     min-height:100%;
   }
-  .content > h1 {
+  .content h1 {
     font-size: 72px;
   }
   .content {
@@ -16,17 +16,21 @@
     background-image: url('<%= asset_path("quality.jpg") %>'); 
     background-size: 100%;
   }
-  #quality > .content {
+  #quality .content {
     color: white;
     margin-top: -128px;
   }
-  #quality > .content > p {
+  #quality .content > p {
     padding-left: 20px;
   }
-  #research > .content{
+  #research {
+    background-color: #192635;
+    color: white;
+  }
+  #research .content{
     margin-top: -263px; 
   }
-  #tech > .content{
+  #tech .content{
     margin-top: -194px; 
   }
   #tech .sub-content {
@@ -39,13 +43,13 @@
     position: absolute; 
     top: 140px; 
     left: 100px; 
-    width: 300px; 
+    /*width: 300px; */
   }
   #tech .measurement-sm {
     position: absolute; 
     top: 140px; 
     left: 300px; 
-    width: 300px; 
+    /* width: 300px; */
   }
   #tech .number {
     font-size: 30px;
@@ -116,53 +120,75 @@
     display: none;
     color: #dddddd;
   }
+  @media (max-width: 768px) {
+    .content h1 {
+      font-size: 48px;
+    }
+  }
+  @media (min-width: $screen-sm) {
+    
+  }
+
+  @media (min-width: $screen-md) {
+    
+  }
+
+  @media (min-width: $screen-lg-desktop) {
+    
+  }
 </style>
 <div id="crafts" class="active crafts slide">
-  <div class="col-sm-8 col-sm-offset-2 text-center content">
-    <h1><%= t('home_page.crafts.title') %></h1>
-    <p class="lead">
-      <%= t('home_page.crafts.content_1') %>
-    </p>
-    <div class="col-sm-8 col-sm-offset-2">
-      <div class="relative-img">
-        <%= image_tag('crafts.png', class: '') %>
-        <div class="measurement text-left">
-          Waviness Rmax小於
-          <br>
-          <span class="number">60</span>
-          <span class="unit">nm</span>
-        </div>  
+  <div class="col-xs-12 col-sm-8 col-sm-offset-2 text-center content">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1><%= t('home_page.crafts.title') %></h1>
+        <p class="lead">
+          <%= t('home_page.crafts.content_1') %>
+        </p>
       </div>
-    </div>  
+      <div class="col-sm-8 col-sm-offset-2">
+        <div class="relative-img">
+          <%= image_tag('crafts.png', class: '') %>
+          <div class="measurement text-left">
+            Waviness Rmax小於
+            <br>
+            <span class="number">60</span>
+            <span class="unit">nm</span>
+          </div>  
+        </div>
+      </div>  
+    </div>
   </div>
 </div>
 <div id="tech" class="tech slide">
-  <div class="col-sm-8 col-sm-offset-2 text-right content">
-    <div class="col-sm-10 col-sm-offset-1">
-      <div class="relative-img">
-        <%= image_tag('tech.png', class: '') %>
-        <div class="sub-content">
-          <h1><%= t('home_page.tech.title') %></h1>
-          <p class="lead">
-            <%= t('home_page.tech.content_1') %><br><%= t('home_page.tech.content_2') %>
-          </p>
+  <div class="col-xs-12 col-sm-8 col-sm-offset-2 text-right content">
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1">
+        <div class="relative-img">
+          <%= image_tag('tech.png', class: '') %>
+          <div class="sub-content">
+            <h1><%= t('home_page.tech.title') %></h1>
+            <p class="lead">
+              <%= t('home_page.tech.content_1') %><br><%= t('home_page.tech.content_2') %>
+            </p>
+          </div>
+          <h4 class="measurement-lg">
+            <%= t('home_page.tech.radius') %>
+            <span class="number">1.0</span>
+            nm
+          </h4>
+          <h4 class="measurement-sm">
+            <%= t('home_page.tech.radius') %>
+            <span class="number">0.03</span>
+            nm
+          </h4>
         </div>
-        <h4 class="measurement-lg">
-          <%= t('home_page.tech.radius') %>
-          <span class="number">1.0</span>
-          nm
-        </h4>
-        <h4 class="measurement-sm">
-          <%= t('home_page.tech.radius') %>
-          <span class="number">0.03</span>
-          nm
-        </h4>
-      </div>
-    </div>  
+      </div>  
+    </div>
   </div>
 </div>
 <div id="quality" class="quality slide">
-  <div class="col-sm-6 col-sm-offset-2 content">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-2 content">
     <h1><%= t('home_page.quality.title') %></h1>
     <br>
     <br>
@@ -176,28 +202,30 @@
   </div>
 </div>
 <div id="research" class="research slide">
-  <div class="col-sm-6 col-sm-offset-3 text-center content">
-    <h1><%= t('home_page.research.title') %></h1>
-    <div class="col-sm-10 col-sm-offset-1">
-      <%= image_tag('crafts.png', class: '') %>
-    </div>
-    <div class="col-sm-12">
-      <p class="lead">
-        <%= t('home_page.research.content_1') %>
-        <br>
-        <%= t('home_page.research.content_2') %>
-        <br>
-        <%= t('home_page.research.content_3') %>
-        <br>
-        <%= t('home_page.research.content_4') %>
-        <br>
-        <%= t('home_page.research.content_5') %>
-      </p>
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center content">
+    <div class="row">
+      <h1><%= t('home_page.research.title') %></h1>
+      <div class="col-sm-10 col-sm-offset-1">
+        <%= image_tag('research.png', class: '') %>
+      </div>
+      <div class="col-sm-12">
+        <p class="lead">
+          <%= t('home_page.research.content_1') %>
+          <br>
+          <%= t('home_page.research.content_2') %>
+          <br>
+          <%= t('home_page.research.content_3') %>
+          <br>
+          <%= t('home_page.research.content_4') %>
+          <br>
+          <%= t('home_page.research.content_5') %>
+        </p>
+      </div>
     </div>
   </div>
 </div>
 <div id="material" class="material slide">
-  <div class="col-sm-6 col-sm-offset-3 content">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3 content">
     <ul id="myTab" class="nav nav-tabs">
       <li class="active">
         <a href="#material_1" data-toggle="tab">
@@ -282,35 +310,37 @@
   </div>  
 </div>
 <div id="support" class="support slide">
-  <div class="col-sm-6 col-sm-offset-3 text-center content">
-    <div class="col-sm-4">
-      <%= link_to support_path(anchor: 'grinding') do %>
-        <div class="grinding function">
-          <h1><%= t('home_page.support.grinding') %></h1>
-        </div>
-      <% end -%>
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center content">
+    <div class="row">
+      <div class="col-sm-4">
+        <%= link_to support_path(anchor: 'grinding') do %>
+          <div class="grinding function">
+            <h1><%= t('home_page.support.grinding') %></h1>
+          </div>
+        <% end -%>
+      </div>
+      <div class="col-sm-4">
+        <%= link_to support_path(anchor: :reform) do %>
+          <div class="reform function">
+            <h1><%= t('home_page.support.reform') %></h1>
+          </div>
+        <% end -%>
+      </div>
+      <div class="col-sm-4">
+        <%= link_to support_path(anchor: :custom) do %>
+          <div class="custom function">
+            <h1><%= t('home_page.support.custom') %></h1>
+          </div>
+        <% end -%>
+      </div>
+      <div class="col-sm-12">
+        <br>
+        <br>
+        <br>
+        <br>
+        <%= link_to t('nav_contact'), contact_path, class: 'btn btn-warning btn-lg' %>
+      </div>    
     </div>
-    <div class="col-sm-4">
-      <%= link_to support_path(anchor: :reform) do %>
-        <div class="reform function">
-          <h1><%= t('home_page.support.reform') %></h1>
-        </div>
-      <% end -%>
-    </div>
-    <div class="col-sm-4">
-      <%= link_to support_path(anchor: :custom) do %>
-        <div class="custom function">
-          <h1><%= t('home_page.support.custom') %></h1>
-        </div>
-      <% end -%>
-    </div>
-    <div class="col-sm-12">
-      <br>
-      <br>
-      <br>
-      <br>
-      <%= link_to t('nav_contact'), contact_path, class: 'btn btn-warning btn-lg' %>
-    </div>    
   </div>
 </div>
 
@@ -473,6 +503,12 @@
       if (top_position >= top && top_position < $(window).height() / 2) {
         callback();
       };
+    }
+
+    function check_slide_content_height() {
+      $('.slide').find('.content').each(function() {
+        console.log($(this).height());
+      });
     }
 
     $(window).resize(function() {

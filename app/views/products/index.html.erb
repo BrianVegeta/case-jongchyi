@@ -11,7 +11,7 @@
       <% sub_products.each do |product|%>
         <div class="col-sm-4">
           <a class="product_item" data-product-id="<%= product.id %>" >
-            <div style="width: 216px; height: 216px;">
+            <div>
               <%= image_tag(product.photo.avatar.url(:thumb), class: 'img-rounded') %>
             </div>  
             <h4 class="text-center"><%= product.trans_title %> </h4>
