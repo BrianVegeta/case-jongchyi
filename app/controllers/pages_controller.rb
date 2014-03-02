@@ -7,8 +7,9 @@ class PagesController < ApplicationController
   	render layout: 'slide'
   end
   
-  def inside
-  end 
+  def home_new
+    render layout: 'slide_new'
+  end
     
   def support
 

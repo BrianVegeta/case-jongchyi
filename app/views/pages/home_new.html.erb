@@ -1,0 +1,37 @@
+<style type="text/css">
+  .slide {
+    height: 100%; 
+    min-height:100%;
+  }
+  #crafts {
+    /*background-color: red;*/
+  }
+</style>
+<div class="container">
+  <div id="crafts" class="active crafts slide">
+    asdad
+  </div>
+</div>
+<div id="crafts" class="active crafts slide">
+  <div class="col-xs-12 col-sm-8 col-sm-offset-2 text-center content">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1><%= t('home_page.crafts.title') %></h1>
+        <p class="lead">
+          <%= t('home_page.crafts.content_1') %>
+        </p>
+      </div>
+      <div class="col-sm-8 col-sm-offset-2">
+        <div class="relative-img">
+          <%= image_tag('crafts.png', class: '') %>
+          <div class="measurement text-left">
+            Waviness Rmax小於
+            <br>
+            <span class="number">60</span>
+            <span class="unit">nm</span>
+          </div>  
+        </div>
+      </div>  
+    </div>
+  </div>
+</div>
