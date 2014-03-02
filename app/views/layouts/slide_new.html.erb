@@ -10,25 +10,35 @@
 </head>
 <body>
   <style type="text/css">
-    body {
-      /*background-image: url('<%= asset_path("squared_metal_@2X.png") %>'); */
-    }
     .navbar {
       min-height: 46px;
     }
-    #wrap .container{
+    body {
+      /*background-image: url('<%= asset_path("squared_metal_@2X.png") %>'); */
+    }
+    #slide_head .container{
       background-color: blue; 
       width: 1024px;
+    } 
+    #slide_body {
+      height: 100%; 
+      min-height:100%;
+    }
+    #slide_body .container{
+      background-color: blue; 
+      width: 1024px;
+      height: 100%; 
+      min-height:100%;
     } 
     p.large {
       font-size: 21px;
     }
 
     @media (max-width: 768px) {
-      #wrap .container{
+      #slide_body .container{
         background-color: red; 
         width: auto;
-      }
+      } 
       h1 {
         font-size: 32px;
       }
@@ -37,28 +47,31 @@
       }
     }
   </style>
-  <div id="wrap">
+  <div id="slide_head">
     <header>
       <%= render 'layouts/navigation' %>
     </header>
-      
-    <div class="container ">
+
+    <div class="container">
        
       <div class="row">
         <div class="col-sm-6 col-sm-offset-3 text-center">
           <%= render 'layouts/messages' %>
         </div>
       </div>
-
-      <%= yield %>
-
+      
+      <div class="row">
+        <div class="col-sm-12">
+          
+        </div>     
+      </div>  
+      
     </div>
   </div>
-  <%= render 'layouts/footer' %>    
+  <div id="slide_body">
+    <%= yield %>
+    <%= render 'layouts/footer' %>    
+  </div>
 
 </body>
-<script type="text/javascript">
-  $(window).unbind();
-  $(document).unbind('scroll');
-</script>
 </html>
