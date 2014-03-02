@@ -1,4 +1,7 @@
 <style type="text/css">
+  body {
+    overflow: hidden;
+  }
   .slide {
     height: 100%; 
     min-height: 100%;
@@ -132,7 +135,7 @@
 
   /*material*/
   #material {
-    padding-top: 70px;
+    padding-top: 120px;
   }
   #material .content {
     width: 700px;
@@ -165,7 +168,7 @@
   #support .content {
     width: 700px;
     margin-left: 147px;
-    padding: 30px 40px;
+    padding: 100px 40px;
   }
   #support .content .function.grinding {
     background-image: url('<%= asset_path("grinding.jpg") %>'); 
@@ -195,7 +198,7 @@
   }
   #support .content .contact {
     text-align: center;
-    margin-top: 250px;
+    margin-top: 200px;
   }
   #support .content .btn {
     font-size: 36px; 
@@ -378,8 +381,8 @@
     }
   }  
 </style>
-<div class="container slide-body">
-  <div id="crafts" class="active crafts slide">
+<div class="container slide-body active">
+  <div id="crafts" class="crafts slide">
     <div class="content">
       <div class="img-area">
         <%= image_tag('crafts.png') %>
@@ -614,3 +617,156 @@
     </li>
   </ul>
 </nav>
+
+
+<script type="text/javascript">
+$(function() {
+    function number_animate(start, end, $dom, add, f, handle) {
+      var id = setInterval(function() {
+        start = start + add;
+        if (handle) {
+          start = Math.floor(start * handle) / handle
+        };
+        if (add > 0) {
+          if (start >= parseFloat(end)) {
+            clearInterval(id);
+            start = end;
+          };
+        } else {
+          if (start <= parseFloat(end)) {
+            clearInterval(id);
+            start = end;
+          };
+        };
+
+        if (start.toString().length < end.toString().length) {
+          $dom.html(start.toString() + '0');
+        } else {
+          $dom.html(start);
+        }
+      }, f);
+    }
+
+    function animat_crafts() {
+      var $crafts_number = $('#crafts').find('.measurement').find('.number');
+      number_animate(30, 60, $crafts_number, 1, 30);
+    }
+
+    function animat_tech_sm() {
+      var $tech_number = $('#tech').find('.measurement.sm').find('.number');
+      number_animate(0.6, 0.03, $tech_number, -0.01, 20, 100);
+    }
+
+    function slide() {
+      var animating = false;
+      $(window).on('mousewheel DOMMouseScroll', function(e){
+        e.preventDefault();      
+        if (animating) {
+          return false;
+        };
+        var delta = e.originalEvent.detail < 0 || e.originalEvent.wheelDelta > 0 ? 1 : -1;
+        //get the current active slide
+        var $active = $('#slide_body > .active');
+
+        if(delta < 0) { 
+            //mousewheel down
+            var $next = $active.next();
+            //check if there's a next slide available
+            if($next.length){
+                animating = true;
+                //animate scrolling to the next slides offset top
+                $(window).unbind(); 
+                $('body, html').stop(true).animate({scrollTop:$next.offset().top},'slow', function() {
+                  setTimeout(function() {
+                    slide();
+                    animating = false;
+                    $next.addClass('active').siblings().removeClass('active');
+                  }, 500);
+                });
+            }
+
+        }else{
+            //mousewheel up
+            var $prev = $active.prev();
+            if($prev.length){
+                animating = true;
+                $(window).unbind();
+                 //animate scrolling to the previous slides offset top
+                $('body, html').stop(true).animate({scrollTop:$prev.offset().top},'slow', function() {
+                  setTimeout(function() {
+                    slide();
+                    animating = false;
+                    $prev.addClass('active').siblings().removeClass('active');
+                  }, 500);
+                });
+            }
+        }
+      });  
+    }
+    slide();
+    
+
+    $(document).scroll(function() {
+      check_slide_visible('crafts', 0, function() {
+        animat_crafts();
+        slide_active('crafts');
+        active_progress('crafts');
+      });
+      check_slide_visible('tech', 0, function() {
+        animat_tech_sm();
+        slide_active('tech');
+        active_progress('tech');
+      });
+      check_slide_visible('quality', 0, function() {
+        slide_active('quality');
+        active_progress('quality');
+        inverse_progress();
+      });
+      check_slide_visible('research', 0, function() {
+        slide_active('research');
+        active_progress('research');
+        inverse_progress();
+      });
+      check_slide_visible('material', 0, function() {
+        slide_active('material');
+        active_progress('material');
+      });
+      check_slide_visible('support', 0, function() {
+        slide_active('support');
+        active_progress('support');
+      });
+    })
+
+    function slide_active(id) {
+      $('.slide-body').removeClass('active')
+      $('#' + id).parent().addClass('active');
+    }
+
+    function inverse_progress() {
+      $('#progress-nav').find('i').addClass('fa-inverse');
+      $('#progress-nav').find('li').addClass('inverse');
+    }
+
+    function active_progress(class_name) {
+      $('#progress-nav').find('i').removeClass('fa-inverse');
+      $('#progress-nav').find('i').removeClass('fa-circle').addClass('fa-circle-o');
+      $('#progress-nav').find('.' + class_name).find('i').removeClass('fa-circle-o').addClass('fa-circle');
+      $('#progress-nav').find('li').removeClass('inverse');
+    }
+
+    function check_slide_visible(id, top, callback) {
+      var top_position = $('#' + id).offset().top - $(window).scrollTop();
+      if (top_position >= top && top_position < $(window).height() / 2) {
+        callback();
+      };
+    }
+    
+    $('#progress-nav').find('a').mouseover(function() {
+      $(this).prev().show();
+    });
+    $('#progress-nav').find('a').mouseout(function() {
+      $(this).prev().hide();
+    });
+    
+  });
+</script>
