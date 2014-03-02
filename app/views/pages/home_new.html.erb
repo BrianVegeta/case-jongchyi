@@ -130,6 +130,34 @@
     margin-left: 268px;
   }
 
+  /*material*/
+  #material {
+    padding-top: 70px;
+  }
+  #material .content {
+    width: 700px;
+    margin-left: 147px;
+  }
+  #material .content .img-area {
+    display: block;
+    width: 300px;    
+    padding-top: 10px;
+    padding-left: 25px;
+    float: left;
+  }
+  #material .content .text-area {
+    display: block;
+    width: 400px;    
+    padding-top: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    float: left;
+  }
+  #material .content .notice {
+    margin-top: 200px;
+    padding: 10px 25px;
+  }
+
 
   /*media*/
 
@@ -224,6 +252,36 @@
       margin-left: 0;
       top: 45%;
       text-align: center;
+    }
+
+    /*material*/
+    #material .content {
+      position: relative;
+      width: 80%;
+      left: 10%;
+      margin-left: 0;
+    }
+    #material .content .img-area {
+      padding: 10px 25px;
+      display: block;
+      margin: auto;
+      width: 100%;
+      float: none;
+    }
+    #material .content .text-area {
+      padding: 10px 25px;
+      display: block;
+      margin: auto;
+      width: 100%;
+      float: none;
+    }
+    #material .content .notice {
+      padding: 10px 25px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    #material .content .notice h3 small {
+      font-size: 12px;
     }
   }  
 </style>
@@ -328,3 +386,90 @@
     </div>
   </div>
 </div>
+<div class="container slide-body">
+  <div id="material" class="slide">
+    <div class="content">
+      <ul id="myTab" class="nav nav-tabs">
+        <li class="active">
+          <a href="#material_1" data-toggle="tab">
+            <%= t('home_page.material.material_1.title') %>
+          </a>
+        </li>
+        <li>
+          <a href="#material_2" data-toggle="tab">
+            <%= t('home_page.material.material_2.title') %>
+          </a>
+        </li>
+        <li>
+          <a href="#material_3" data-toggle="tab">
+            <%= t('home_page.material.material_3.title') %>
+          </a>
+        </li>
+        <li>
+          <a href="#material_4" data-toggle="tab">
+            <%= t('home_page.material.material_4.title') %>
+          </a>
+        </li>
+      </ul>
+      <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade in active" id="material_1">
+          <div class="img-area">
+            <%= image_tag('material_1.jpg', class: 'img-rounded') %>
+          </div>
+          <div class="text-area">
+            <p class="large">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <%= t('home_page.material.material_1.content') %>
+            </p>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="material_2">
+          <div class="img-area">
+            <%= image_tag('material_2.jpg', class: 'img-rounded') %>
+          </div>
+          <div class="text-area">
+            <p class="large">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <%= t('home_page.material.material_2.content') %>
+              <br>
+              <%= t('home_page.material.material_2.content_1') %>
+              <ul>
+                <li><%= t('home_page.material.material_2.content_2') %></li>
+                <li><%= t('home_page.material.material_2.content_3') %></li>
+              </ul>
+            </p>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="material_3">
+          <div class="img-area">
+            <%= image_tag('material_3.jpg', class: 'img-rounded') %>
+          </div>
+          <div class="text-area">
+            <p class="large">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <%= t('home_page.material.material_3.content') %>
+            </p>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="material_4">
+          <div class="img-area">
+            <%= image_tag('material_4.jpg', class: 'img-rounded') %>
+          </div>
+          <div class="text-area">
+            <p class="large">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <%= t('home_page.material.material_4.content') %>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="notice">
+        <h3><small><%= t('home_page.material.subscript') %></small></h3>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container slide-body">
+  <div id="material" class="slide">
+  </div>
+</div>  
