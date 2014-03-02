@@ -10,62 +10,14 @@
 </head>
 <body>
   <style type="text/css">
-    .navbar {
-      min-height: 46px;
-    }
     body {
       /*background-image: url('<%= asset_path("squared_metal_@2X.png") %>'); */
     }
-    h1 {
-      font-size: 48px;
-    }
-    p.large {
-      font-size: 21px;
-    }
-    #slide_head .container{
-      /*background-color: blue; */
-      width: 1024px;
-    } 
-    #slide_body {
-      height: 100%; 
-      min-height:100%;
-      position: relative;
-    }
-    #slide_body .container{
-      /*background-color: blue; */
-      width: 1024px;
-      height: 100%; 
-      min-height:100%;
-    }
-
-    #footer {
-      position: relative;
-      z-index: 1000;
-    }
-    
-
-    @media (max-width: 768px) {
-      #slide_head .container{
-        /*background-color: red; */
-        width: auto;
-      } 
-      #slide_body .container{
-        /*background-color: red; */
-        width: auto;
-      } 
-      h1 {
-        font-size: 30px;
-      }
-      p.large {
-        font-size: 14px;
-      }
-    }
   </style>
-  <div id="slide_head">
+  <div>
     <header>
       <%= render 'layouts/navigation' %>
     </header>
-
     <div class="container">
        
       <div class="row">
@@ -82,10 +34,8 @@
       
     </div>
   </div>
-  <div id="slide_body">
-    <%= yield %>
-    <%= render 'layouts/footer' %>    
-  </div>
+  <%= yield %>
+  <%= render 'layouts/footer' %>    
 
 </body>
 </html>

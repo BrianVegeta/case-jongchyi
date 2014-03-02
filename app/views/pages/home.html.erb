@@ -4,105 +4,208 @@
   }
   .slide {
     height: 100%; 
-    min-height:100%;
+    min-height: 100%;
+    padding-top: 46px;
   }
-  .content h1 {
-    font-size: 60px;
+  .slide-body
+  {
+    position: relative;
+    height: 100%; 
+    min-height: 600px;
   }
-  .content {
+  .full-slide {
+    position: relative;
+    min-width: 1024px;
+  }
+
+  /* crafts */
+  #crafts {
+    /*background-color: : green;*/
+  }
+  #crafts .content {
+    position: relative;
     top: 50%;
+    left: 8%;
+    width: 84%;
+    margin-top: -18%;
   }
-  #quality {
-    background-image: url('<%= asset_path("quality.jpg") %>'); 
-    background-size: 100%;
+  #crafts .content .img-area {
+    width: 70%;
   }
-  #quality .content {
-    color: white;
-    margin-top: -128px;
-  }
-  #quality .content > p {
-    padding-left: 20px;
-  }
-  #research {
-  background-color: #192635;
-  background-image: url('<%= asset_path("blueprint.png") %>'); 
-    color: white;
-  }
-  #research .content{
-    margin-top: -263px; 
-  }
-  #tech .content{
-    margin-top: -194px; 
-  }
-  #tech .sub-content {
-    position: absolute; 
-    top: 0px; 
-    left: 380px; 
-    /*width: 300px; */
-  }
-  #tech .measurement-lg {
-    position: absolute; 
-    top: 85px; 
-    left: 240px; 
-    /*width: 300px; */
-  }
-  #tech .measurement-sm {
-    position: absolute; 
-    top: 165px; 
-    left: 510px; 
-    /* width: 300px; */
-  }
-  #tech .number {
-    font-size: 30px;
-  }
-  #crafts > .content {
-    margin-top: -231px; 
-  }
-  .relative-img {
-    position: relative; 
+  #crafts .content .img-area img {
     width: 100%;
   }
-  #crafts .measurement {
-    position: absolute; 
-    top: 50px; 
-    left: 350px; 
-    width: 150px; 
+  #crafts .content .text-area {
+    position: absolute;
+    top: -15%;
+    left: 52%;
+    width: 40%;
   }
-  #crafts .measurement .number {
-    font-size: 52px;
-    line-height: 1;
-    width: 60px;
+  #crafts .content .measurement {
+    position: absolute;
+    top: 20%;
+    font-size: 18px;
+    left: 70%;
   }
-  #crafts .measurement .unit {
-    font-size: 28px;
+  #crafts .content .measurement .number {
+    font-size: 70px;
+  }
+  #crafts .content .measurement .unit {
+    font-size: 36px;
+  }
+
+  /*tech*/
+  #tech {
+    /*background-color: red;*/
+  }
+  #tech .img-area {
+    position: absolute;
+    width: 35%;
+  }
+  #tech .img-area.right {
+    top: -17%;
+    left: 65%;
+  }
+  #tech .img-area.left {
+    top: 25%;
+  }
+  #tech .text-area {
+    position: absolute;
+    top: 50%;
+    margin-top: -76px;
+    left: 50%;
+    margin-left: -147px;
+  }
+  #tech .measurement {
+    position: absolute;
+    font-size: 18px;
+    color: #8F8080;
+  }
+  #tech .measurement .number {
+    font-size: 44px;
+  }
+  #tech .measurement hr {
+    border-top: 2px solid #8F8080;
+    margin: 0;
+  }
+  #tech .measurement.sm {
+    top: 45%;
+    left: 88%;
+    width: 60%;
+    text-align: right;
+  }
+  #tech .measurement.lg {
+    text-align: left;
+    width: 50%;
+    top: 32%;
+    left: -35%;
+  }
+
+  /*quality*/
+  #quality {
+    background-image: url('<%= asset_path("quality_full.jpg") %>'); 
+    background-size: 100%;
+  }
+  #quality .text-area {
+    color: white;
+    left: 20%;
+    position: absolute;
+    top: 25%;
+  }
+
+  /*research*/
+  #research {
+    background-color: #192635;
+    background-image: url('<%= asset_path("blueprint.png") %>'); 
+    color: white;
+  }
+  #research .img-area {
+    position: absolute;
+    width: 916px;
+    margin-left: 39px;
+  }
+  #research .img-area img {
+    width: 100%;
+  }
+  #research .text-area {
+    position: absolute;
+    width: 300px;
+    margin-left: 268px;
+  }
+
+  /*material*/
+  #material {
+    padding-top: 120px;
   }
   #material .content {
-    background-color: white;
-    padding: 10px;
-    border: 1px solid #dddddd;
-    border-radius: 4px;
-    margin-top: -186px; 
+    width: 700px;
+    margin-left: 147px;
   }
-  #material p {
-    font-size: 18px;
+  #material .content .img-area {
+    display: block;
+    width: 300px;    
+    padding-top: 10px;
+    padding-left: 25px;
+    float: left;
+  }
+  #material .content .text-area {
+    display: block;
+    width: 400px;    
+    padding-top: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    float: left;
+  }
+  #material .content .notice {
+    margin-top: 200px;
+    padding: 10px 25px;
+  }
+
+  /*support*/
+  #support {
+    /*background-color: red;*/
   }
   #support .content {
-    margin-top: -153px; 
+    width: 700px;
+    margin-left: 147px;
+    padding: 100px 40px;
   }
-  #support .function {
-    background-color: yellow; 
-    display: inline-block;
+  #support .content .function.grinding {
+    background-image: url('<%= asset_path("grinding.jpg") %>'); 
+    background-size: 100%;
+  }
+  #support .content .function.reform {
+    background-image: url('<%= asset_path("reform.jpg") %>'); 
+    background-size: 100%;
+  }
+  #support .content .function.custom {
+    background-image: url('<%= asset_path("custom.jpg") %>'); 
+    background-size: 100%;
+  }
+  #support .content .function {
     width: 150px;
     height: 150px;
-    border-radius: 100px;
-    vertical-align: middle;
-    padding: 35px;
+    margin-left: 43px;
+    border-radius: 75px;
     box-shadow:4px 4px 3px rgba(20%,20%,40%,0.5);
+    display: block;
+    float: left;
+    text-align: center;
+    font-size: 36px;
+    padding-top: 46px;
+    color: white;
+    text-shadow: -1px 0 #dddddd, 0 2px #383838, 2px 0 #383838, 0 -1px #dddddd;
   }
-  #support .btn-warning {
-    font-size: 40px;
-    box-shadow:4px 4px 3px rgba(20%,20%,40%,0.5);
+  #support .content .contact {
+    text-align: center;
+    margin-top: 200px;
   }
+  #support .content .btn {
+    font-size: 36px; 
+    width: 250px;
+  }
+
+  /*nav*/
   #progress-nav {
     position: fixed;
     z-index: 100;
@@ -122,102 +225,259 @@
     color: #373737;
   }
   #progress-nav i {
-    font-size: 10px;
+    font-size: 6px;
   }
   #progress-nav .inverse .hover-text {
     color: #dddddd;
   }
-  
+
+  /*media*/
+
   @media (max-width: 768px) {
-    .content h1 {
-      font-size: 48px;
+    .full-slide {
+      min-width: 100%;
     }
-  }
-  @media (min-width: $screen-sm) {
-    
-  }
 
-  @media (min-width: $screen-md) {
-    
-  }
+    /* crafts */
+    #crafts .content {
+      top: 30%;
+      left: 0;
+      width: 100%;
+      margin-top: 0%;
+    }
+    #crafts .content .img-area {
+      width: 100%;
+    }
+    #crafts .content .text-area {
+      top: -28%;
+      left: 0;
+      width: 100%;
+      text-align: center;
+    }
 
-  @media (min-width: $screen-lg-desktop) {
-    
-  }
+    #crafts .content .measurement {
+      top: 28%;
+      font-size: 12px;
+      left: 30%;
+      text-align: center;
+      width: 40%;
+    }
+    #crafts .content .measurement .number {
+      font-size: 28px;
+    }
+    #crafts .content .measurement .unit {
+      font-size: 14px;
+    }
+
+    /*tech*/
+    #tech {
+      background-image: url('<%= asset_path("old_mathematics.png") %>');
+    }
+    #tech .img-area.left {
+      top: 40%;
+    }
+    #tech .img-area.right {
+      top: 12%;
+      left: 65%;
+    }
+    #tech .measurement.lg {
+      text-align: left;
+      width: 90%;
+      top: 8%;
+      left: -35%;
+    }
+    #tech .measurement.sm {
+      top: 45%;
+      left: 78%;
+      width: 100%;
+      text-align: right;
+    }
+    #tech .measurement .number {
+      font-size: 24px;
+    }
+    #tech .measurement p {
+      font-size: 12px;
+    }
+    #tech .text-area {
+      top: 40%;
+      left: 20%;
+      margin-left: 0; 
+      width: 60%;
+    }
+
+    /*quality*/
+    #quality {
+      background-image: url('<%= asset_path("quality.jpg") %>'); 
+      background-size: 100%;
+    }
+    #quality .text-area {
+      left: 20%;
+      top: 50%;
+    }
+
+    /*research*/
+    #research .img-area {
+      width: 80%;
+      left: 10%;
+      margin-left: 0;
+    }
+    #research .text-area {
+      width: 80%;
+      left: 10%;
+      margin-left: 0;
+      top: 45%;
+      text-align: center;
+    }
+
+    /*material*/
+    #material {
+      padding-top: 60px;
+    }
+    #material .content {
+      position: relative;
+      width: 80%;
+      left: 10%;
+      margin-left: 0;
+    }
+    #material .content .img-area {
+      padding: 10px 25px;
+      display: block;
+      margin: auto;
+      width: 100%;
+      float: none;
+    }
+    #material .content .text-area {
+      padding: 0px 25px;
+      display: block;
+      margin: auto;
+      width: 100%;
+      float: none;
+    }
+    #material .content .notice {
+      padding: 0px 25px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    #material .content .notice h3{
+      margin: 0;
+      line-height: 0.5;
+    }
+    #material .content .notice h3 small {
+      font-size: 12px;
+    }
+
+    /*support*/
+    #support .content {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0;
+    }
+    #support .content .function {
+      width: 100px;
+      height: 100px;
+      margin: 5px auto;
+      float: none;
+      padding-top: 26px;
+    }
+    #support .content a {
+      text-decoration: none;
+    }
+    #support .content .contact {
+      margin-top: 10px;
+    }
+    #support .content .btn {
+      font-size: 26px; 
+      width: 150px;
+    }
+  }  
 </style>
-<div id="crafts" class="active crafts slide">
-  <div class="col-xs-12 col-sm-8 col-sm-offset-2 text-center content">
-    <div class="row">
-      <div class="col-xs-12">
-        <h1><%= t('home_page.crafts.title') %></h1>
-        <p class="lead">
-          <%= t('home_page.crafts.content_1') %>
+<div class="container slide-body active">
+  <div id="crafts" class="crafts slide">
+    <div class="content">
+      <div class="img-area">
+        <%= image_tag('crafts.png') %>
+      </div>
+      <div class="text-area text-right">
+        <div class="title">
+          <h1><%= t('home_page.crafts.title') %></h1>
+        </div>
+        <div class="description">
+          <p class="large">
+            <%= t('home_page.crafts.content_1') %>
+          </p>  
+        </div>
+      </div>
+      <div class="measurement text-left">
+        Waviness Rmax小於
+        <br>
+        <span class="number">60</span>
+        <span class="unit">nm</span>
+      </div>  
+    </div>
+  </div>
+</div>
+<div class="slide-body">
+  <div id="tech" class="slide full-slide">
+    <div class="img-area left">
+      <%= image_tag('tech_2.png') %>
+      <div class="measurement sm">
+        <p>
+          <%= t('home_page.tech.radius') %>
+          <span class="number">0.03</span>
+          nm
         </p>
+        <hr>
       </div>
-      <div class="col-sm-8 col-sm-offset-2">
-        <div class="relative-img">
-          <%= image_tag('crafts.png', class: '') %>
-          <div class="measurement text-left">
-            Waviness Rmax小於
-            <br>
-            <span class="number">60</span>
-            <span class="unit">nm</span>
-          </div>  
-        </div>
-      </div>  
+    </div>
+    <div class="img-area right">
+      <%= image_tag('tech_1.png') %>
+      <div class="measurement lg">
+        <p>
+          <%= t('home_page.tech.radius') %>
+          <span class="number">1.0</span>
+          nm
+        </p>
+        <hr>
+      </div>
+    </div>
+    <div class="container">
+      <div class="text-area">
+        <h1><%= t('home_page.tech.title') %></h1>
+        <p class="large">
+          <%= t('home_page.tech.content_1') %><br><%= t('home_page.tech.content_2') %>
+        </p>  
+      </div>
     </div>
   </div>
 </div>
-<div id="tech" class="tech slide">
-  <div class="col-xs-12 col-sm-8 col-sm-offset-2 text-right content">
-    <div class="row">
-      <div class="col-sm-10 col-sm-offset-1">
-        <div class="relative-img">
-          <%= image_tag('tech.png', class: '') %>
-          <div class="sub-content">
-            <h1><%= t('home_page.tech.title') %></h1>
-            <p class="lead">
-              <%= t('home_page.tech.content_1') %><br><%= t('home_page.tech.content_2') %>
-            </p>
-          </div>
-          <h5 class="measurement-lg">
-            <%= t('home_page.tech.radius') %>
-            <span class="number">1.0</span>
-            nm
-          </h5>
-          <h5 class="measurement-sm">
-            <%= t('home_page.tech.radius') %>
-            <span class="number">0.03</span>
-            nm
-          </h5>
-        </div>
-      </div>  
-    </div>
-  </div>
-</div>
-<div id="quality" class="quality slide">
-  <div class="col-xs-12 col-sm-6 col-sm-offset-2 content">
-    <h1><%= t('home_page.quality.title') %></h1>
-    <br>
-    <br>
-    <p class="lead">
-      <%= t('home_page.quality.content_1') %>
-      <br>
-      <%= t('home_page.quality.content_2') %>
-      <br>
-      <%= t('home_page.quality.content_3') %>
-    </p>
-  </div>
-</div>
-<div id="research" class="research slide">
-  <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center content">
-    <div class="row">
-      <h1><%= t('home_page.research.title') %></h1>
-      <div class="col-sm-10 col-sm-offset-1">
-        <%= image_tag('research.png', class: '') %>
-      </div>
-      <div class="col-sm-12">
+<div class="slide-body">
+  <div id="quality" class="slide full-slide">
+    <div class="container">
+      <div class="text-area">
+        <h1><%= t('home_page.quality.title') %></h1>
+        <br>
+        <br>
         <p class="lead">
+          <%= t('home_page.quality.content_1') %>
+          <br>
+          <%= t('home_page.quality.content_2') %>
+          <br>
+          <%= t('home_page.quality.content_3') %>
+        </p>
+      </div> 
+    </div>
+  </div>
+</div>
+<div class="slide-body">
+  <div id="research" class="slide full-slide">
+    <div class="container">
+      <div class="img-area">
+        <%= image_tag('research.png') %>
+      </div>
+      <div class="text-area">
+        <h1><%= t('home_page.research.title') %></h1>
+        <br>
+        <p class="large">
           <%= t('home_page.research.content_1') %>
           <br>
           <%= t('home_page.research.content_2') %>
@@ -228,135 +488,122 @@
           <br>
           <%= t('home_page.research.content_5') %>
         </p>
+      </div> 
+    </div>
+  </div>
+</div>
+<div class="container slide-body">
+  <div id="material" class="slide">
+    <div class="content">
+      <ul id="myTab" class="nav nav-tabs">
+        <li class="active">
+          <a href="#material_1" data-toggle="tab">
+            <%= t('home_page.material.material_1.title') %>
+          </a>
+        </li>
+        <li>
+          <a href="#material_2" data-toggle="tab">
+            <%= t('home_page.material.material_2.title') %>
+          </a>
+        </li>
+        <li>
+          <a href="#material_3" data-toggle="tab">
+            <%= t('home_page.material.material_3.title') %>
+          </a>
+        </li>
+        <li>
+          <a href="#material_4" data-toggle="tab">
+            <%= t('home_page.material.material_4.title') %>
+          </a>
+        </li>
+      </ul>
+      <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade in active" id="material_1">
+          <div class="img-area">
+            <%= image_tag('material_1.jpg', class: 'img-rounded') %>
+          </div>
+          <div class="text-area">
+            <p class="large">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <%= t('home_page.material.material_1.content') %>
+            </p>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="material_2">
+          <div class="img-area">
+            <%= image_tag('material_2.jpg', class: 'img-rounded') %>
+          </div>
+          <div class="text-area">
+            <p class="large">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <%= t('home_page.material.material_2.content') %>
+              <br>
+              <%= t('home_page.material.material_2.content_1') %>
+              <ul>
+                <li><%= t('home_page.material.material_2.content_2') %></li>
+                <li><%= t('home_page.material.material_2.content_3') %></li>
+              </ul>
+            </p>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="material_3">
+          <div class="img-area">
+            <%= image_tag('material_3.jpg', class: 'img-rounded') %>
+          </div>
+          <div class="text-area">
+            <p class="large">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <%= t('home_page.material.material_3.content') %>
+            </p>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="material_4">
+          <div class="img-area">
+            <%= image_tag('material_4.jpg', class: 'img-rounded') %>
+          </div>
+          <div class="text-area">
+            <p class="large">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <%= t('home_page.material.material_4.content') %>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="notice">
+        <h3><small><%= t('home_page.material.subscript') %></small></h3>
       </div>
     </div>
   </div>
 </div>
-<div id="material" class="material slide">
-  <div class="col-xs-12 col-sm-6 col-sm-offset-3 content">
-    <ul id="myTab" class="nav nav-tabs">
-      <li class="active">
-        <a href="#material_1" data-toggle="tab">
-          <%= t('home_page.material.material_1.title') %>
-        </a>
-      </li>
-      <li>
-        <a href="#material_2" data-toggle="tab">
-          <%= t('home_page.material.material_2.title') %>
-        </a>
-      </li>
-      <li>
-        <a href="#material_3" data-toggle="tab">
-          <%= t('home_page.material.material_3.title') %>
-        </a>
-      </li>
-      <li>
-        <a href="#material_4" data-toggle="tab">
-          <%= t('home_page.material.material_4.title') %>
-        </a>
-      </li>
-    </ul>
-    <div id="myTabContent" class="tab-content">
-      <div class="tab-pane fade in active" id="material_1">
-        <br>
-        <div class="col-sm-6">
-          <%= image_tag('material_1.jpg', class: 'img-rounded') %>
+<div class="container slide-body">
+  <div id="support" class="slide">
+    <div class="content">
+      <%= link_to support_path(anchor: :to_grinding), target: '_blank' do %>
+        <div class="grinding function">
+          <span><%= t('home_page.support.grinding') %></span>
         </div>
-        <div class="col-sm-6">
-          <p>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <%= t('home_page.material.material_1.content') %>
-          </p>
+      <% end -%>
+      <%= link_to support_path(anchor: :to_reform), target: '_blank' do %>
+        <div class="reform function">
+          <span><%= t('home_page.support.reform') %></span>
         </div>
-      </div>
-      <div class="tab-pane fade" id="material_2">
-        <br>
-        <div class="col-sm-6">
-          <%= image_tag('material_2.jpg', class: 'img-rounded') %>
+      <% end -%>
+      <%= link_to support_path(anchor: :to_custom), target: '_blank' do %>
+        <div class="custom function">
+          <span><%= t('home_page.support.custom') %></span>
         </div>
-        <div class="col-sm-6">
-          <p>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <%= t('home_page.material.material_2.content') %>
-            <br>
-            <%= t('home_page.material.material_2.content_1') %>
-            <ul>
-              <li><%= t('home_page.material.material_2.content_2') %></li>
-              <li><%= t('home_page.material.material_2.content_3') %></li>
-            </ul>
-          </p>
-        </div>
-      </div>
-      <div class="tab-pane fade" id="material_3">
-        <br>
-        <div class="col-sm-6">
-          <%= image_tag('material_3.jpg', class: 'img-rounded') %>
-        </div>
-        <div class="col-sm-6">
-          <p>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <%= t('home_page.material.material_3.content') %>
-          </p>
-        </div>
-      </div>
-      <div class="tab-pane fade" id="material_4">
-        <br>
-        <div class="col-sm-6">
-          <%= image_tag('material_4.jpg', class: 'img-rounded') %>
-        </div>
-        <div class="col-sm-6">
-          <p>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <%= t('home_page.material.material_4.content') %>
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-12">
-      <h3><small><%= t('home_page.material.subscript') %></small></h3>
-    </div>
-  </div>  
-</div>
-<div id="support" class="support slide">
-  <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center content">
-    <div class="row">
-      <div class="col-sm-4">
-        <%= link_to support_path(anchor: 'grinding'), target: '_blank' do %>
-          <div class="grinding function">
-            <h2><%= t('home_page.support.grinding') %></h2>
-          </div>
-        <% end -%>
-      </div>
-      <div class="col-sm-4">
-        <%= link_to support_path(anchor: :reform) do %>
-          <div class="reform function">
-            <h2><%= t('home_page.support.reform') %></h2>
-          </div>
-        <% end -%>
-      </div>
-      <div class="col-sm-4">
-        <%= link_to support_path(anchor: :custom) do %>
-          <div class="custom function">
-            <h2><%= t('home_page.support.custom') %></h2>
-          </div>
-        <% end -%>
-      </div>
-      <div class="col-sm-12">
-        <br>
-        <br>
-        <br>
-        <br>
+      <% end -%>
+      <div class="contact">
         <%= link_to t('nav_contact'), contact_path, class: 'btn btn-warning btn-lg' %>
-      </div>    
+      </div>
     </div>
   </div>
 </div>
-
 <nav id="progress-nav">
   <ul>
     <li class="text-right">
       <span class="hover-text"><%= t('home_page.nav_progress.crafts') %></span> 
-      <a class="crafts" href="#crafts"><i class="fa fa-circle-o"></i></a>
+      <a class="crafts" href="#crafts"><i class="fa fa-circle"></i></a>
     </li>
     <li class="text-right">
       <span class="hover-text"><%= t('home_page.nav_progress.tech') %></span> 
@@ -381,48 +628,43 @@
   </ul>
 </nav>
 
+
 <script type="text/javascript">
-  $(function() {
+$(function() {
     function number_animate(start, end, $dom, add, f, handle) {
       var id = setInterval(function() {
         start = start + add;
         if (handle) {
-          start = Math.ceil(start * handle) / handle
+          start = Math.floor(start * handle) / handle
         };
-        
-        if (start >= parseFloat(end)) {
-          clearInterval(id);
-          start = end;
+        if (add > 0) {
+          if (start >= parseFloat(end)) {
+            clearInterval(id);
+            start = end;
+          };
+        } else {
+          if (start <= parseFloat(end)) {
+            clearInterval(id);
+            start = end;
+          };
         };
-        $dom.html(start);
+
+        if (start.toString().length < end.toString().length) {
+          $dom.html(start.toString() + '0');
+        } else {
+          $dom.html(start);
+        }
       }, f);
     }
 
     function animat_crafts() {
-      var $crafts_number = $('.crafts').find('.measurement').find('.number');
+      var $crafts_number = $('#crafts').find('.measurement').find('.number');
       number_animate(30, 60, $crafts_number, 1, 30);
     }
 
-    function animat_tech_lg() {
-      var $tech_number = $('.tech').find('.measurement-lg').find('.number');
-      number_animate(0.1, '1.0', $tech_number, 0.1, 100, 10);
-    }
-
     function animat_tech_sm() {
-      var $tech_number = $('.tech').find('.measurement-sm').find('.number');
-      number_animate(0.01, 0.03, $tech_number, 0.01, 600);
-    }
-
-    function check_animate(name) {
-      switch (name) {
-        case 'crafts':
-          animat_crafts();
-          break;
-        case 'tech':
-          animat_tech_lg();
-          animat_tech_sm();
-          break; 
-      }
+      var $tech_number = $('#tech').find('.measurement.sm').find('.number');
+      number_animate(0.6, 0.03, $tech_number, -0.01, 20, 100);
     }
 
     function slide() {
@@ -434,7 +676,7 @@
         };
         var delta = e.originalEvent.detail < 0 || e.originalEvent.wheelDelta > 0 ? 1 : -1;
         //get the current active slide
-        var $active = $('body > .active');
+        var $active = $('#slide_body > .active');
 
         if(delta < 0) { 
             //mousewheel down
@@ -445,7 +687,6 @@
                 //animate scrolling to the next slides offset top
                 $(window).unbind(); 
                 $('body, html').stop(true).animate({scrollTop:$next.offset().top},'slow', function() {
-                  check_animate($next.attr('id'));
                   setTimeout(function() {
                     slide();
                     animating = false;
@@ -462,7 +703,6 @@
                 $(window).unbind();
                  //animate scrolling to the previous slides offset top
                 $('body, html').stop(true).animate({scrollTop:$prev.offset().top},'slow', function() {
-                  check_animate($prev.attr('id'));
                   setTimeout(function() {
                     slide();
                     animating = false;
@@ -474,18 +714,16 @@
       });  
     }
     slide();
-    setTimeout(function() {
-      animat_crafts();
-      animat_tech_lg();
-      animat_tech_sm();
-    }, 2000);
+    
 
     $(document).scroll(function() {
       check_slide_visible('crafts', 0, function() {
+        animat_crafts();
         slide_active('crafts');
         active_progress('crafts');
       });
       check_slide_visible('tech', 0, function() {
+        animat_tech_sm();
         slide_active('tech');
         active_progress('tech');
       });
@@ -510,8 +748,8 @@
     })
 
     function slide_active(id) {
-      $('.slide').removeClass('active')
-      $('#' + id).addClass('active');
+      $('.slide-body').removeClass('active')
+      $('#' + id).parent().addClass('active');
     }
 
     function inverse_progress() {
@@ -532,16 +770,6 @@
         callback();
       };
     }
-
-    function check_slide_content_height() {
-      $('.slide').find('.content').each(function() {
-        // console.log($(this).height());
-      });
-    }
-
-    $(window).resize(function() {
-      // console.log($(window).height());
-    });
     
     $('#progress-nav').find('a').mouseover(function() {
       $(this).prev().show();
@@ -551,5 +779,4 @@
     });
     
   });
-
 </script>

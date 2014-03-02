@@ -7,7 +7,6 @@ CaseJongchyi::Application.routes.draw do
 
   root "pages#home"    
   get "home", to: "pages#home", as: "home"
-  get "home_new", to: "pages#home_new", as: "home_new"
   get "support", to: "pages#support", as: "support"
   get "contact", to: "pages#contact", as: "contact"
   

@@ -2,6 +2,11 @@ class Product < ActiveRecord::Base
 	# Pagination
   paginates_per 10
 
+  M_A = I18n.t('home_page.material.material_1.title')
+  M_B = I18n.t('home_page.material.material_2.title')
+  M_C = I18n.t('home_page.material.material_3.title')
+  M_D = I18n.t('home_page.material.material_4.title')
+
 	belongs_to :photo
 	def self.cates
 		{
@@ -15,12 +20,42 @@ class Product < ActiveRecord::Base
 	end
 	def self.sub_cates
 		{
-			1 => {2 => 'A', 3 => 'B', 4 => 'C'},
-			5 => {6 => 'A', 7 => 'B', 8 => 'C'},
-			9 => {10 => 'A', 11 => 'B', 12 => 'C'},
-			13 => {14 => 'A', 15 => 'B', 16 => 'C'},
-			17 => {18 => 'A', 19 => 'B', 20 => 'C'},
-			21 => {22 => 'A', 23 => 'B', 24 => 'C'}
+			1 => {
+				2 => Product::M_A, 
+				3 => Product::M_B, 
+				4 => Product::M_C, 
+				25 => Product::M_D
+			},
+			5 => {
+				6 => Product::M_A, 
+				7 => Product::M_B, 
+				8 => Product::M_C, 
+				26 => Product::M_D
+			},
+			9 => {
+				10 => Product::M_A, 
+				11 => Product::M_B, 
+				12 => Product::M_C, 
+				27 => Product::M_D
+			},
+			13 => {
+				14 => Product::M_A, 
+				15 => Product::M_B, 
+				16 => Product::M_C, 
+				28 => Product::M_D
+			},
+			17 => {
+				18 => Product::M_A, 
+				19 => Product::M_B, 
+				20 => Product::M_C, 
+				29 => Product::M_D
+			},
+			21 => {
+				22 => Product::M_A, 
+				23 => Product::M_B, 
+				24 => Product::M_C, 
+				30 => Product::M_D
+			}
 		}
 	end
 

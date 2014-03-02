@@ -6,10 +6,6 @@ class PagesController < ApplicationController
   def home
   	render layout: 'slide'
   end
-  
-  def home_new
-    render layout: 'slide_new'
-  end
     
   def support
 
