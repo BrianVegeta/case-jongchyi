@@ -202,6 +202,32 @@
     width: 250px;
   }
 
+  /*nav*/
+  #progress-nav {
+    position: fixed;
+    z-index: 100;
+    margin-top: -32px;
+    right: 17px;
+    top: 50%;
+    opacity: 1;
+  }
+  #progress-nav ul {
+    list-style: none outside;
+  }
+  #progress-nav ul a {
+    color: black;
+  }
+  #progress-nav ul .hover-text {
+    display: none;
+    color: #373737;
+  }
+  #progress-nav i {
+    font-size: 6px;
+  }
+  #progress-nav .inverse .hover-text {
+    color: #dddddd;
+  }
+
   /*media*/
 
   @media (max-width: 768px) {
@@ -560,3 +586,31 @@
     </div>
   </div>
 </div>
+<nav id="progress-nav">
+  <ul>
+    <li class="text-right">
+      <span class="hover-text"><%= t('home_page.nav_progress.crafts') %></span> 
+      <a class="crafts" href="#crafts"><i class="fa fa-circle"></i></a>
+    </li>
+    <li class="text-right">
+      <span class="hover-text"><%= t('home_page.nav_progress.tech') %></span> 
+      <a class="tech" href="#tech"><i class="fa fa-circle-o"></i></a>  
+    </li>
+    <li class="text-right">
+      <span class="hover-text"><%= t('home_page.nav_progress.quality') %></span> 
+      <a class="quality" href="#quality"><i class="fa fa-circle-o"></i></a>  
+    </li>
+    <li class="text-right">
+      <span class="hover-text"><%= t('home_page.nav_progress.research') %></span> 
+      <a class="research" href="#research"><i class="fa fa-circle-o"></i></a>
+    </li>
+    <li class="text-right">
+      <span class="hover-text"><%= t('home_page.nav_progress.material') %></span> 
+      <a class="material" href="#material"><i class="fa fa-circle-o"></i></a>
+    </li>
+    <li class="text-right">
+      <span class="hover-text"><%= t('home_page.nav_progress.support') %></span> 
+      <a class="support" href="#support"><i class="fa fa-circle-o"></i></a>
+    </li>
+  </ul>
+</nav>
