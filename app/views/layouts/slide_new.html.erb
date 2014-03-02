@@ -16,6 +16,12 @@
     body {
       /*background-image: url('<%= asset_path("squared_metal_@2X.png") %>'); */
     }
+    h1 {
+      font-size: 48px;
+    }
+    p.large {
+      font-size: 21px;
+    }
     #slide_head .container{
       background-color: blue; 
       width: 1024px;
@@ -30,11 +36,13 @@
       height: 100%; 
       min-height:100%;
     } 
-    p.large {
-      font-size: 21px;
-    }
+    
 
     @media (max-width: 768px) {
+      #slide_head .container{
+        background-color: red; 
+        width: auto;
+      } 
       #slide_body .container{
         background-color: red; 
         width: auto;
@@ -43,7 +51,7 @@
         font-size: 32px;
       }
       p.large {
-        font-size: 18px;
+        font-size: 16px;
       }
     }
   </style>

@@ -5,14 +5,90 @@
     padding-top: 50px;
   }
 
+  /* crafts */
   #crafts {
     background-color: green;
   }
+  #crafts .content {
+    position: relative;
+    top: 50%;
+    left: 8%;
+    width: 84%;
+    margin-top: -18%;
+  }
+  #crafts .content .img-area {
+    width: 70%;
+  }
+  #crafts .content .img-area img {
+    width: 100%;
+  }
+  #crafts .content .text-area {
+    position: absolute;
+    top: -15%;
+    left: 52%;
+    width: 40%;
+  }
+
+  #crafts .content .measurement {
+    position: absolute;
+    top: 20%;
+    font-size: 18px;
+    left: 70%;
+  }
+  #crafts .content .measurement .number {
+    font-size: 70px;
+  }
+  #crafts .content .measurement .unit {
+    font-size: 36px;
+  }
+
+  @media (max-height: 600px) {
+    #crafts .content {
+      top: 300px;
+    }  
+  }
+
+  @media (max-width: 768px) {
+    /* crafts */
+    #crafts .content {
+      top: 30%;
+      left: 0;
+      width: 100%;
+      margin-top: 0%;
+    }
+    #crafts .content .img-area {
+      width: 100%;
+    }
+    #crafts .content .text-area {
+      top: -28%;
+      left: 0;
+      width: 100%;
+      text-align: center;
+    }
+
+    #crafts .content .measurement {
+      top: 28%;
+      font-size: 12px;
+      left: 30%;
+      text-align: center;
+      width: 40%;
+    }
+    #crafts .content .measurement .number {
+      font-size: 32px;
+    }
+    #crafts .content .measurement .unit {
+      font-size: 14px;
+    }
+  }
+
 </style>
 <div class="container slide-body">
   <div id="crafts" class="active crafts slide">
     <div class="content">
-      <div class="text-area">
+      <div class="img-area">
+        <%= image_tag('crafts.png') %>
+      </div>
+      <div class="text-area text-right">
         <div class="title">
           <h1><%= t('home_page.crafts.title') %></h1>
         </div>
@@ -22,40 +98,17 @@
           </p>  
         </div>
       </div>
-      <div class="img-area">
-        <%= image_tag('crafts.png', style: "border: 1px solid rgba(86,61,124,.2);") %>
-        <div class="measurement text-left">
-          Waviness Rmax小於
-          <br>
-          <span class="number">60</span>
-          <span class="unit">nm</span>
-        </div>  
-      </div>
+      <div class="measurement text-left">
+        Waviness Rmax小於
+        <br>
+        <span class="number">60</span>
+        <span class="unit">nm</span>
+      </div>  
     </div>
   </div>
 </div>
 <div class="container slide-body">
-  <div id="crafts" class="active crafts slide">
-    <div class="content">
-      <div class="text-area">
-        <div class="title">
-          <h1><%= t('home_page.crafts.title') %></h1>
-        </div>
-        <div class="description">
-          <p class="large">
-            <%= t('home_page.crafts.content_1') %>
-          </p>  
-        </div>
-      </div>
-      <div class="img-area">
-        <%= image_tag('crafts.png', class: '') %>
-        <div class="measurement text-left">
-          Waviness Rmax小於
-          <br>
-          <span class="number">60</span>
-          <span class="unit">nm</span>
-        </div>  
-      </div>
-    </div>
+  <div class="slide" style="background-color: red;">
+    asdasd
   </div>
 </div>
