@@ -158,6 +158,49 @@
     padding: 10px 25px;
   }
 
+  /*support*/
+  #support {
+    background-color: red;
+  }
+  #support .content {
+    width: 700px;
+    margin-left: 147px;
+    padding: 30px 40px;
+  }
+  #support .content .function.grinding {
+    background-image: url('<%= asset_path("grinding.jpg") %>'); 
+    background-size: 100%;
+  }
+  #support .content .function.reform {
+    background-image: url('<%= asset_path("reform.jpg") %>'); 
+    background-size: 100%;
+  }
+  #support .content .function.custom {
+    background-image: url('<%= asset_path("custom.jpg") %>'); 
+    background-size: 100%;
+  }
+  #support .content .function {
+    width: 150px;
+    height: 150px;
+    margin-left: 43px;
+    border-radius: 75px;
+    box-shadow:4px 4px 3px rgba(20%,20%,40%,0.5);
+    display: block;
+    float: left;
+    text-align: center;
+    font-size: 36px;
+    padding-top: 46px;
+    color: white;
+    text-shadow: -1px 0 #dddddd, 0 2px #383838, 2px 0 #383838, 0 -1px #dddddd;
+  }
+  #support .content .contact {
+    text-align: center;
+    margin-top: 250px;
+  }
+  #support .content .btn {
+    font-size: 36px; 
+    width: 250px;
+  }
 
   /*media*/
 
@@ -282,6 +325,30 @@
     }
     #material .content .notice h3 small {
       font-size: 12px;
+    }
+
+    /*support*/
+    #support .content {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0;
+    }
+    #support .content .function {
+      width: 100px;
+      height: 100px;
+      margin: 5px auto;
+      float: none;
+      padding-top: 26px;
+    }
+    #support .content a {
+      text-decoration: none;
+    }
+    #support .content .contact {
+      margin-top: 20px;
+    }
+    #support .content .btn {
+      font-size: 26px; 
+      width: 150px;
     }
   }  
 </style>
@@ -470,6 +537,26 @@
   </div>
 </div>
 <div class="container slide-body">
-  <div id="material" class="slide">
+  <div id="support" class="slide">
+    <div class="content">
+      <%= link_to support_path(anchor: :to_grinding), target: '_blank' do %>
+        <div class="grinding function">
+          <span><%= t('home_page.support.grinding') %></span>
+        </div>
+      <% end -%>
+      <%= link_to support_path(anchor: :to_reform), target: '_blank' do %>
+        <div class="reform function">
+          <span><%= t('home_page.support.reform') %></span>
+        </div>
+      <% end -%>
+      <%= link_to support_path(anchor: :to_custom), target: '_blank' do %>
+        <div class="custom function">
+          <span><%= t('home_page.support.custom') %></span>
+        </div>
+      <% end -%>
+      <div class="contact">
+        <%= link_to t('nav_contact'), contact_path, class: 'btn btn-warning btn-lg' %>
+      </div>
+    </div>
   </div>
-</div>  
+</div>
