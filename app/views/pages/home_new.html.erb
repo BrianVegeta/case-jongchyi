@@ -110,6 +110,26 @@
     top: 25%;
   }
 
+  /*research*/
+  #research {
+    background-color: #192635;
+    background-image: url('<%= asset_path("blueprint.png") %>'); 
+    color: white;
+  }
+  #research .img-area {
+    position: absolute;
+    width: 916px;
+    margin-left: 39px;
+  }
+  #research .img-area img {
+    width: 100%;
+  }
+  #research .text-area {
+    position: absolute;
+    width: 300px;
+    margin-left: 268px;
+  }
+
 
   /*media*/
 
@@ -191,6 +211,20 @@
       left: 20%;
       top: 50%;
     }
+
+    /*research*/
+    #research .img-area {
+      width: 80%;
+      left: 10%;
+      margin-left: 0;
+    }
+    #research .text-area {
+      width: 80%;
+      left: 10%;
+      margin-left: 0;
+      top: 45%;
+      text-align: center;
+    }
   }  
 </style>
 <div class="container slide-body">
@@ -271,18 +305,24 @@
   </div>
 </div>
 <div class="slide-body">
-  <div class="slide full-slide">
+  <div id="research" class="slide full-slide">
     <div class="container">
+      <div class="img-area">
+        <%= image_tag('research.png') %>
+      </div>
       <div class="text-area">
-        <h1><%= t('home_page.quality.title') %></h1>
+        <h1><%= t('home_page.research.title') %></h1>
         <br>
-        <br>
-        <p class="lead">
-          <%= t('home_page.quality.content_1') %>
+        <p class="large">
+          <%= t('home_page.research.content_1') %>
           <br>
-          <%= t('home_page.quality.content_2') %>
+          <%= t('home_page.research.content_2') %>
           <br>
-          <%= t('home_page.quality.content_3') %>
+          <%= t('home_page.research.content_3') %>
+          <br>
+          <%= t('home_page.research.content_4') %>
+          <br>
+          <%= t('home_page.research.content_5') %>
         </p>
       </div> 
     </div>
