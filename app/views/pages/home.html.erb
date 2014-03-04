@@ -19,6 +19,11 @@
   }
 
   /* crafts */
+  #crafts_bg {
+    height: 100%; 
+    min-height: 100%;
+    background-image: url('<%= asset_path("noisy_grid.png") %>');
+  }
   #crafts {
     /*background-color: : green;*/
   }
@@ -134,12 +139,22 @@
   }
 
   /*material*/
+  #material_bg {
+    background-image: url('<%= asset_path("cream_pixels.png") %>');
+  }
   #material {
     padding-top: 120px;
   }
   #material .content {
-    width: 700px;
+    padding: 10px;
+    width: 722px;
     margin-left: 147px;
+    background-color: #FFFEF7;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  #material .content .nav-tabs > li.active > a {
+    background-color: #FFFEF7;
   }
   #material .content .img-area {
     display: block;
@@ -160,10 +175,13 @@
     margin-top: 200px;
     padding: 10px 25px;
   }
+  #material .content .notice h3 small { 
+    color: #979090;
+  }
 
   /*support*/
-  #support {
-    /*background-color: red;*/
+  #support_bg {
+    background-image: url('<%= asset_path("ricepaper.png") %>'); 
   }
   #support .content {
     width: 700px;
@@ -387,8 +405,8 @@
     }
   }  
 </style>
-<div class="container slide-body active">
-  <div id="crafts" class="crafts slide">
+<div id="crafts_bg" class="slide-body active">
+  <div id="crafts" class="container slide">
     <div class="content">
       <div class="img-area">
         <%= image_tag('crafts.png') %>
@@ -488,8 +506,8 @@
     </div>
   </div>
 </div>
-<div class="container slide-body">
-  <div id="material" class="slide">
+<div id="material_bg" class="slide-body">
+  <div id="material" class="container slide">
     <div class="content">
       <ul id="myTab" class="nav nav-tabs">
         <li class="active">
@@ -571,8 +589,8 @@
     </div>
   </div>
 </div>
-<div class="container slide-body">
-  <div id="support" class="slide">
+<div id="support_bg" class="slide-body">
+  <div id="support" class="container slide">
     <div class="content">
       <%= link_to support_path(anchor: :to_grinding), target: '_blank' do %>
         <div class="grinding function">
