@@ -60,11 +60,11 @@
   }
   #tech .img-area {
     position: absolute;
-    width: 35%;
+    width: 30%;
   }
   #tech .img-area.right {
-    top: -17%;
-    left: 65%;
+    top: 0;
+    left: 70%;
   }
   #tech .img-area.left {
     top: 25%;
@@ -90,15 +90,15 @@
   }
   #tech .measurement.sm {
     top: 45%;
-    left: 88%;
-    width: 60%;
+    left: 80%;
+    width: 75%;
     text-align: right;
   }
   #tech .measurement.lg {
     text-align: left;
-    width: 50%;
+    width: 60%;
     top: 32%;
-    left: -35%;
+    left: -40%;
   }
 
   /*quality*/
@@ -275,7 +275,6 @@
     }
     #tech .img-area.right {
       top: 12%;
-      left: 65%;
     }
     #tech .measurement.lg {
       text-align: left;
@@ -656,7 +655,7 @@ $(function() {
 
     function animat_crafts() {
       var $crafts_number = $('#crafts').find('.measurement').find('.number');
-      number_animate(30, 60, $crafts_number, 1, 30);
+      number_animate(100, 60, $crafts_number, -1, 30);
     }
 
     function animat_tech_sm() {
