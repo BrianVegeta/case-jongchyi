@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 ruby '2.0.0'
 gem 'execjs'
-# gem 'therubyracer', :platforms => :ruby
+group :production do
+  gem 'therubyracer', :platforms => :ruby
+end
 gem 'rails', '4.0.2'
 gem 'sass-rails', '~> 4.0.1'
 gem 'uglifier', '~> 2.4.0'
