@@ -165,6 +165,7 @@ DEPENDENCIES
   cocaine
   coffee-rails (~> 4.0.1)
   devise (~> 3.2.2)
+  execjs
   figaro (~> 0.7.0)
   font-awesome-sass (~> 4.0.2)
   friendly_id (~> 5.0.2)
