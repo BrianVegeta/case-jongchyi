@@ -32,7 +32,8 @@ gem 'bootstrap-kaminari-views'
 gem 'friendly_id', '~> 5.0.2'
 
 # font-awesome
-gem 'font-awesome-sass', '~> 4.0.2'
+# gem 'font-awesome-sass', '~> 4.0.2'
+gem "font-awesome-rails"
 
 # Devise
 gem 'devise', '~> 3.2.2'
