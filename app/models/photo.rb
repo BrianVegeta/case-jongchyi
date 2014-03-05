@@ -6,7 +6,9 @@ class Photo < ActiveRecord::Base
 											:small => "100x100>" 
 										}, 
 										:default_url => "missing.jpg",
-										:processors => [:cropper]
+										:processors => [:cropper],
+										url: "/assets/splash_images/:id/:style/:basename.:extension",
+     								path: ":rails_root/public/assets/splash_images/:id/:style/:basename.:extension"
   
   validates_attachment 	:avatar,
   											:content_type => { 
