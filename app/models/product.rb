@@ -2,10 +2,10 @@ class Product < ActiveRecord::Base
 	# Pagination
   paginates_per 10
 
-  M_A = I18n.t('home_page.material.material_1.title')
-  M_B = I18n.t('home_page.material.material_2.title')
-  M_C = I18n.t('home_page.material.material_3.title')
-  M_D = I18n.t('home_page.material.material_4.title')
+  M_A = I18n.t('product.sub_category.scd')
+  M_B = I18n.t('product.sub_category.spd')
+  M_C = I18n.t('product.sub_category.cbn')
+  M_D = I18n.t('product.sub_category.wc')
 
 	belongs_to :photo
 	def self.cates
