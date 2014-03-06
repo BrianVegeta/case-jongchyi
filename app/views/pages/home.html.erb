@@ -645,40 +645,46 @@
 
 <script type="text/javascript">
 $(function() {
-    function number_animate(start, end, $dom, add, f, handle) {
-      var id = setInterval(function() {
-        start = start + add;
-        if (handle) {
-          start = Math.floor(start * handle) / handle
-        };
-        if (add > 0) {
-          if (start >= parseFloat(end)) {
-            clearInterval(id);
-            start = end;
+    var animating_crafts = false;
+    var animating_tech = false;
+    function number_animate(start, end, $dom, add, f, animating, handle) {
+      if (animating === false) {
+        var id = setInterval(function() {
+          animating = true;
+          start = start + add;
+          if (handle) {
+            start = Math.floor(start * handle) / handle
           };
-        } else {
-          if (start <= parseFloat(end)) {
-            clearInterval(id);
-            start = end;
+          if (add > 0) {
+            if (start >= parseFloat(end)) {
+              clearInterval(id);
+              start = end;
+            };
+          } else {
+            if (start <= parseFloat(end)) {
+              clearInterval(id);
+              animating = false;
+              start = end;
+            };
           };
-        };
 
-        if (start.toString().length < end.toString().length) {
-          $dom.html(start.toString() + '0');
-        } else {
-          $dom.html(start);
-        }
-      }, f);
+          if (start.toString().length < end.toString().length) {
+            $dom.html(start.toString() + '0');
+          } else {
+            $dom.html(start);
+          }
+        }, f);
+      }
     }
 
     function animat_crafts() {
       var $crafts_number = $('#crafts').find('.measurement').find('.number');
-      number_animate(100, 60, $crafts_number, -1, 30);
+      number_animate(100, 60, $crafts_number, -1, 30, animating_crafts);
     }
 
     function animat_tech_sm() {
       var $tech_number = $('#tech').find('.measurement.sm').find('.number');
-      number_animate(0.6, 0.03, $tech_number, -0.01, 20, 100);
+      number_animate(0.6, 0.03, $tech_number, -0.01, 20, animating_tech, 100);
     }
 
     function slide() {
@@ -727,6 +733,8 @@ $(function() {
         }
       });  
     }
+    animat_crafts();
+    animat_tech_sm();
     slide();
     
 
