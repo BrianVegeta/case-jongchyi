@@ -1,9 +1,31 @@
+<style type="text/css">
+	#contact_link .tooltip {
+		width: 180px;
+		left: -46px;
+	}
+	#contact_link .tooltip-inner {
+		background-color: #FA3636;
+	}
+	#contact_link .tooltip-arrow {
+		border-bottom-color: #FA3636;
+	}
+	@media (max-width: 768px) {
+		#contact_link .tooltip {
+			visibility: hidden;
+		}	
+	}
+</style>
 <li>
   <%= link_to t('product.sample'), products_path(1, Product.cates[1]) %>
 </li>
 <li>
   <%= link_to t('nav_support'), support_path %>
 </li>
-<li>
-  <%= link_to t('nav_contact'), contact_path %>
+<li id="contact_link">
+  <%= link_to t('nav_contact'), contact_path, 'data-toggle' => "tooltip", 'data-placement' => "bottom", 'title' => t('nav_contact_tooltip') %>
 </li>
+<script type="text/javascript">
+	$('#contact_link > a').tooltip({
+		trigger: 'manual'
+	});
+</script>
