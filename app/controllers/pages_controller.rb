@@ -8,10 +8,10 @@ class PagesController < ApplicationController
   end
     
   def support
-
+    set_page_title I18n.t('nav_support')
   end
 
   def contact
-  	
+    set_page_title I18n.t('nav_contact')
   end
 end
