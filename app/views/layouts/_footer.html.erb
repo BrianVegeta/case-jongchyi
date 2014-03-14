@@ -1,4 +1,16 @@
-<div id="footer" style="margin-bottom: -20px;">
+<style type="text/css">
+  #footer {
+    margin-bottom: -20px;
+    min-width: 1024px;
+  }
+  @media (max-width: 768px) {
+    #footer {
+      width: auto;
+      min-width: 0;
+    } 
+  }
+</style>
+<div id="footer">
   <div class="container">
     
     <div class="row footer-first-row">
@@ -7,7 +19,6 @@
         <p>
           <small>
             &copy; 2014 - John Chyi Diamond Co. Ltd. & John Yi Co. Ltd.
-            <br/>
             <br/>
             <%= t('home') %>
           </small>
