@@ -8,11 +8,6 @@
   .modal .modal-dialog { 
     width: 80%; 
   }
-  @media (max-width: 768px) {
-    .modal .modal-dialog { 
-      width: 90%; 
-    }
-  }
   #watch {
     width: 28px;
     height: 28px;
@@ -21,7 +16,21 @@
     width: 100%;
     margin-left: 37px;
   }
+  .fa.clock {
+    width: 26px;
+    height: 26px;
+    margin: 0 1px 2px 1px;
+    background-image: url('<%= asset_path("clock-time-3.png") %>');
+    background-repeat: no-repeat; 
+    background-size: 26px Auto;
+  }
+  .watches-title {
+    margin-top: -4px;
+  }
   @media (max-width: 768px) {
+      .modal .modal-dialog { 
+        width: 90%; 
+      }
       #watch img {
         width: 100%;
         margin-left: 131px;
@@ -35,10 +44,9 @@
 <div id="categories" class="col-sm-10 col-sm-offset-1">
   <div class="col-sm-2 text-center">
     <a href="<%= products_path(1, Product.cates[1]) %>">
-      <div id="watch">
-        <%= image_tag('clock-time-3.png') %>
-      </div>
-      <%= t 'product.category.watches' %>
+      <i class="fa clock fa-2x"></i>
+      <br>
+      <p class="watches-title"><%= t 'product.category.watches' %></p>
     </a>
   </div>
   <div class="col-sm-2 text-center">
@@ -48,7 +56,7 @@
         <i class="fa fa-flash fa-stack-1x fa-inverse"></i>
       </span>
       <br>
-      <%= t 'product.category.precious_metals' %>
+      <p><%= t 'product.category.precious_metals' %></p>
     </a>
   </div>  
   <div class="col-sm-2 text-center">
