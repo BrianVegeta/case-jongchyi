@@ -1,3 +1,29 @@
+<style type="text/css">
+  .navbar-brand {
+    background-image: url('<%= asset_path("JongChyi.Logo4.png") %>'); 
+    background-repeat: no-repeat; 
+    background-size: 250px Auto;
+    background-position: 15px center;
+    height: 70px;
+    width: 300px;
+  }
+  .navbar {
+    min-height: 70px;
+  }
+  .navbar .navbar-nav > li > a {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+  @media (max-width: 768px) {
+    .navbar {
+      min-height: 50px;
+    }   
+    .navbar .navbar-nav > li > a {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+</style>
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
@@ -7,7 +33,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to t('home'), root_path, class: 'navbar-brand' %>
+      <%= link_to '', root_path, class: 'navbar-brand' %>
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
