@@ -1,94 +1,119 @@
 <style type="text/css">
-	.image-area {
-		margin-left: 332px;
-		margin-top: 20px;
-	}
-	.image-area img {
-		width: 330px; 
-		height: 330px;
-	}
-
-	.description {
-		width: 560px;
-		margin-top: 20px;
-		margin-left: 217px;
-	}
 	@media (max-width: 768px) {
-    .image-area {
-    	width: 330px;
-			margin: 20px auto;
-		}
-		.image-area img {
-			width: auto; 
-			height: auto;
-		}
-
-		.description {
-			width: auto;
-			max-width: 560px;
-			margin: 20px auto;
-		}
+    h1 {
+    	font-size: 26px;
+    }
   }
 </style>
-<div id="to_grinding"></div>
-<br>
-<br>
-<br>
-<div id="grinding">
-	<h1 class="text-center"><%= I18n.t('support_page.grinding.title') %></h1>
-	<div class="image-area">
-		<%= image_tag('grinding.jpg', class: 'img-circle') %>
-	</div>
-	<div class="description">
-		<p class="large">
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= t('support_page.grinding.content_1') %><%= t('support_page.grinding.content_2') %><%= t('support_page.grinding.content_3') %><%= t('support_page.grinding.content_4') %><%= t('support_page.grinding.content_5') %><%= t('support_page.grinding.content_6') %>
-		</p>
-		<p class="text-right">
-			<em><small><%= t('support_page.grinding.sub_content') %></small></em>
-		</p>
-	</div>
-</div>
-<br>
-<hr>
-<div id="to_reform"></div>
-<br>
-<br>
-<br>
-<div id="reform">
-	<h1 class="text-center"><%= I18n.t('support_page.reform.title') %></h1>
-	<div class="image-area">
-		<%= image_tag('reform.jpg', class: 'img-circle') %>
-	</div>
-	<div class="description">
-		<p class="large">
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= t('support_page.reform.content_1') %><%= t('support_page.reform.content_2') %><%= t('support_page.reform.content_3') %><%= t('support_page.reform.content_4') %><%= t('support_page.reform.content_5') %>
-		</p>
-		<p class="text-right">
-			<em><small><%= t('support_page.reform.sub_content') %></small></em>
-		</p>
-	</div>
-</div>
-<br>
-<hr>
-<div id="to_custom"></div>
-<br>
-<br>
-<br>
-<div id="custom">
-	<h1 class="text-center"><%= I18n.t('support_page.custom.title') %></h1>
+	<div id="to_grinding"></div>
 	<br>
-	<div class="image-area">
-		<%= image_tag('custom.jpg', class: 'img-circle') %>
+	<br>
+	<br>
+	<div id="grinding">
+		<div class="row">
+			<div class="col-xs-12">
+				<h1 class="text-center"><%= I18n.t('support_page.grinding.title') %></h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-md-8 col-md-offset-2">
+				<div class="row">
+					<div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3">
+						<div class="image-area">
+							<%= image_tag('grinding.jpg', class: 'img-circle') %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-xs-12 col-md-6 col-md-offset-3">
+				<div class="description">
+					<p class="large">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= t('support_page.grinding.content_1') %><%= t('support_page.grinding.content_2') %><%= t('support_page.grinding.content_3') %><%= t('support_page.grinding.content_4') %><%= t('support_page.grinding.content_5') %><%= t('support_page.grinding.content_6') %>
+					</p>
+					<p class="text-right">
+						<em><small><%= t('support_page.grinding.sub_content') %></small></em>
+					</p>
+				</div>
+			</div>
+		</div>
 	</div>
-	<div class="description">
-		<p class="large">
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= t('support_page.custom.content_1') %><%= t('support_page.custom.content_2') %><%= t('support_page.custom.content_3') %><%= t('support_page.custom.content_4') %>
-		</p>
-		<p class="text-right">
-			<em><small><%= t('support_page.custom.sub_content') %></small></em>
-		</p>
+	<br>
+	<hr>
+	<div id="to_reform"></div>
+	<br>
+	<br>
+	<br>
+	<div id="reform">
+		<div class="row">
+			<div class="col-xs-12">
+				<h1 class="text-center"><%= I18n.t('support_page.reform.title') %></h1>
+			</div>
+		</div>	
+		<div class="row">
+			<div class="col-xs-12 col-md-8 col-md-offset-2">
+				<div class="row">
+					<div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3">
+						<div class="image-area">
+							<%= image_tag('grinding.jpg', class: 'img-circle') %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-xs-12 col-md-6 col-md-offset-3">
+				<div class="description">
+					<p class="large">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= t('support_page.reform.content_1') %><%= t('support_page.reform.content_2') %><%= t('support_page.reform.content_3') %><%= t('support_page.reform.content_4') %><%= t('support_page.reform.content_5') %>
+					</p>
+					<p class="text-right">
+						<em><small><%= t('support_page.reform.sub_content') %></small></em>
+					</p>
+				</div>
+			</div>
+		</div>		
 	</div>
-</div>
+	<br>
+	<hr>
+	<div id="to_custom"></div>
+	<br>
+	<br>
+	<br>
+	<div id="custom">
+		<div class="row">
+			<div class="col-xs-12">
+				<h1 class="text-center"><%= I18n.t('support_page.custom.title') %></h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-md-8 col-md-offset-2">
+				<div class="row">
+					<div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3">
+						<div class="image-area">
+							<%= image_tag('custom.jpg', class: 'img-circle') %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<br>
+		<div class="row">
+			<div class="col-xs-12 col-md-6 col-md-offset-3">
+				<div class="description">
+					<p class="large">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= t('support_page.custom.content_1') %><%= t('support_page.custom.content_2') %><%= t('support_page.custom.content_3') %><%= t('support_page.custom.content_4') %>
+					</p>
+					<p class="text-right">
+						<em><small><%= t('support_page.custom.sub_content') %></small></em>
+					</p>
+				</div>
+			</div>
+		</div>	
+	</div>
 <script type="text/javascript">
 	setTimeout(function() {
 		$('#contact_link > a').tooltip('show');

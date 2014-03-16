@@ -11,7 +11,7 @@
   {
     position: relative;
     height: 100%; 
-    min-height: 600px;
+    min-height: 480px;
   }
   .full-slide {
     position: relative;
@@ -136,6 +136,7 @@
     position: absolute;
     width: 300px;
     margin-left: 268px;
+    margin-top: 30px;
   }
 
   /*material*/
@@ -152,6 +153,7 @@
     background-color: #FFFEF7;
     border-radius: 5px;
     border: 1px solid #ddd;
+    box-shadow:4px 4px 3px rgba(20%,20%,40%,0.5);
   }
   #material .content .nav-tabs > li.active > a {
     background-color: #FFFEF7;
@@ -188,31 +190,28 @@
     margin-left: 147px;
     padding: 100px 40px;
   }
-  #support .content .function.grinding {
-    background-image: url('<%= asset_path("grinding.jpg") %>'); 
-    background-size: 100%;
-  }
-  #support .content .function.reform {
-    background-image: url('<%= asset_path("reform.jpg") %>'); 
-    background-size: 100%;
-  }
-  #support .content .function.custom {
-    background-image: url('<%= asset_path("custom.jpg") %>'); 
-    background-size: 100%;
-  }
   #support .content .function {
+    position: relative;
     width: 150px;
     height: 150px;
     margin-left: 43px;
-    border-radius: 75px;
-    box-shadow:4px 4px 3px rgba(20%,20%,40%,0.5);
     display: block;
     float: left;
     text-align: center;
+  }
+  #support .content .function img {
+    border-radius: 75px;
+    box-shadow:4px 4px 3px rgba(20%,20%,40%,0.5);
+  }
+  #support .content .function span {
     font-size: 36px;
-    padding-top: 46px;
     color: white;
     text-shadow: -1px 0 #dddddd, 0 2px #383838, 2px 0 #383838, 0 -1px #dddddd;
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+    left: 50%;
+    margin-left: -36px;
   }
   #support .content .contact {
     text-align: center;
@@ -250,8 +249,182 @@
   }
 
   /*media*/
+  @media (max-width: 768px){
+    .full-slide {
+      min-width: 100%;
+    }
 
-  @media (max-width: 768px) {
+    /* crafts */
+    #crafts .content {
+      top: 30%;
+      left: 0;
+      width: 100%;
+      margin-top: 0%;
+    }
+    #crafts .content .img-area {
+      width: 100%;
+    }
+    #crafts .content .text-area {
+      top: -16%;
+      left: 0;
+      width: 100%;
+      text-align: center;
+    }
+    #crafts .content .text-area p {
+      font-size: 12px;
+    }
+
+    #crafts .content .measurement {
+      top: 28%;
+      font-size: 12px;
+      left: 25%;
+      text-align: center;
+      width: 50%;
+    }
+    #crafts .content .measurement .number {
+      font-size: 28px;
+    }
+    #crafts .content .measurement .unit {
+      font-size: 14px;
+    }
+
+    /*tech*/
+    #tech .img-area.left {
+      top: 40%;
+    }
+    #tech .img-area.right {
+      top: 12%;
+    }
+    #tech .measurement.lg {
+      text-align: left;
+      width: 135%;
+      top: 8%;
+      left: -75%;
+    }
+    #tech .measurement.sm {
+      top: 45%;
+      left: 78%;
+      width: 150%;
+      text-align: right;
+    }
+    #tech .measurement .number {
+      font-size: 24px;
+    }
+    #tech .measurement p {
+      font-size: 12px;
+      margin-bottom: 0;
+    }
+    #tech .text-area {
+      top: 40%;
+      left: 20%;
+      margin-left: 0; 
+      width: 60%;
+    }
+
+    /*quality*/
+    #quality {
+      background-image: url('<%= asset_path("quality.jpg") %>'); 
+      background-size: 100%;
+    }
+    #quality .text-area {
+      left: 20%;
+      top: 36%;
+    }
+
+    /*research*/
+    #research .img-area {
+      width: 80%;
+      left: 10%;
+      margin-left: 0;
+    }
+    #research .text-area {
+      width: 80%;
+      left: 10%;
+      margin-left: 0;
+      top: 45%;
+      text-align: center;
+    }
+
+    /*material*/
+    #material {
+      padding: 60px 4px 0 4px;
+    }
+    #material .content {
+      position: relative;
+      width: 100%;
+      left: 0;
+      margin-left: 0;
+      padding: 5px;
+    }
+    #material .content .img-area {
+      padding: 5px 40px;
+      display: block;
+      margin: auto;
+      width: 70%;
+      float: none;
+    }
+    #material .content .text-area {
+      padding: 0 10px;
+      display: block;
+      margin: auto;
+      width: 100%;
+      float: none;
+    }
+    #material .content .notice {
+      padding: 0 10px 10px 10px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    #material .content .notice h3{
+      margin: 0;
+      line-height: 0.5;
+    }
+    #material .content .notice h3 small {
+      font-size: 12px;
+    }
+    #material .content .nav-tabs > li > a {
+      padding: 4px;
+      font-size: 19px;
+    }
+
+    /*support*/
+    #support .content {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0;
+    }
+    #support .content .function {
+      width: 28%;
+      height: auto; 
+      margin-left: 4%;
+      margin-bottom: 20px;
+      margin-top: 70px;
+    }
+    #support .content .function img {
+      border-radius: 100px;
+    }
+    #support .content .function span {
+      font-size: 26px;
+      margin-left: -26px;
+      margin-top: -18px;
+    }
+    #support .content a {
+      text-decoration: none;
+    }
+    #support .content .contact {
+      margin-top: 10px;
+    }
+    #support .content .btn {
+      font-size: 26px; 
+      width: 150px;
+    }
+
+    #progress-nav {
+      visibility: hidden;
+    }
+  }
+
+  @media (max-width: 460px) {
     .full-slide {
       min-width: 100%;
     }
@@ -272,13 +445,16 @@
       width: 100%;
       text-align: center;
     }
+    #crafts .content .text-area p {
+      font-size: 12px;
+    }
 
     #crafts .content .measurement {
       top: 28%;
       font-size: 12px;
-      left: 30%;
+      left: 25%;
       text-align: center;
-      width: 40%;
+      width: 50%;
     }
     #crafts .content .measurement .number {
       font-size: 28px;
@@ -296,14 +472,14 @@
     }
     #tech .measurement.lg {
       text-align: left;
-      width: 90%;
+      width: 135%;
       top: 8%;
-      left: -35%;
+      left: -75%;
     }
     #tech .measurement.sm {
       top: 45%;
       left: 78%;
-      width: 100%;
+      width: 150%;
       text-align: right;
     }
     #tech .measurement .number {
@@ -311,6 +487,7 @@
     }
     #tech .measurement p {
       font-size: 12px;
+      margin-bottom: 0;
     }
     #tech .text-area {
       top: 40%;
@@ -326,7 +503,7 @@
     }
     #quality .text-area {
       left: 20%;
-      top: 50%;
+      top: 36%;
     }
 
     /*research*/
@@ -345,30 +522,31 @@
 
     /*material*/
     #material {
-      padding-top: 60px;
+      padding: 60px 6px 0 6px;
     }
     #material .content {
       position: relative;
-      width: 80%;
-      left: 10%;
+      width: 100%;
+      left: 0;
       margin-left: 0;
+      padding: 5px;
     }
     #material .content .img-area {
-      padding: 10px 25px;
+      padding: 5px 40px;
       display: block;
       margin: auto;
       width: 100%;
       float: none;
     }
     #material .content .text-area {
-      padding: 0px 25px;
+      padding: 0 10px;
       display: block;
       margin: auto;
       width: 100%;
       float: none;
     }
     #material .content .notice {
-      padding: 0px 25px;
+      padding: 0 10px 10px 10px;
       margin: 0 auto;
       width: 100%;
     }
@@ -379,6 +557,10 @@
     #material .content .notice h3 small {
       font-size: 12px;
     }
+    #material .content .nav-tabs > li > a {
+      padding: 3px;
+      font-size: 12px;
+    }
 
     /*support*/
     #support .content {
@@ -387,11 +569,19 @@
       padding: 0;
     }
     #support .content .function {
-      width: 100px;
-      height: 100px;
-      margin: 5px auto;
-      float: none;
-      padding-top: 26px;
+      width: 28%;
+      height: auto; 
+      margin-left: 4%;
+      margin-bottom: 20px;
+      margin-top: 70px;
+    }
+    #support .content .function img {
+      border-radius: 100px;
+    }
+    #support .content .function span {
+      font-size: 26px;
+      margin-left: -26px;
+      margin-top: -18px;
     }
     #support .content a {
       text-decoration: none;
@@ -402,6 +592,10 @@
     #support .content .btn {
       font-size: 26px; 
       width: 150px;
+    }
+
+    #progress-nav {
+      visibility: hidden;
     }
   }  
 </style>
@@ -437,7 +631,7 @@
         <p>
           <%= t('home_page.tech.radius') %>
           <span class="number">0.03</span>
-          nm
+          mm
         </p>
         <hr>
       </div>
@@ -448,7 +642,7 @@
         <p>
           <%= t('home_page.tech.radius') %>
           <span class="number">1.0</span>
-          nm
+          mm
         </p>
         <hr>
       </div>
@@ -593,16 +787,19 @@
     <div class="content">
       <%= link_to support_path(anchor: :to_grinding), target: '_blank' do %>
         <div class="grinding function">
+          <%= image_tag('grinding.jpg') %>
           <span><%= t('home_page.support.grinding') %></span>
         </div>
       <% end -%>
       <%= link_to support_path(anchor: :to_reform), target: '_blank' do %>
         <div class="reform function">
+          <%= image_tag('reform.jpg') %>
           <span><%= t('home_page.support.reform') %></span>
         </div>
       <% end -%>
       <%= link_to support_path(anchor: :to_custom), target: '_blank' do %>
         <div class="custom function">
+          <%= image_tag('custom.jpg') %>
           <span><%= t('home_page.support.custom') %></span>
         </div>
       <% end -%>
