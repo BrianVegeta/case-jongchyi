@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
   before_filter :reject_locked!, if: :devise_controller?
   before_filter :set_locale
+  before_filter :set_title_site_name
   
 
   # Devise permitted params
@@ -82,5 +83,9 @@ class ApplicationController < ActionController::Base
 
   def render_404
     raise ActionController::RoutingError.new('Not Found')
+  end
+
+  def set_title_site_name
+    SeoHelper.configuration.site_name = t('company')
   end
 end
