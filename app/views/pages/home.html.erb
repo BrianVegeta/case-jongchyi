@@ -244,7 +244,6 @@
   }
   #progress-nav i {
     font-size: 6px;
-    -webkit-transform : scale(0.5);
   }
   #progress-nav .inverse .hover-text {
     color: #dddddd;
@@ -840,7 +839,6 @@
   </ul>
 </nav>
 
-
 <script type="text/javascript">
 $(function() {
     var animating_crafts = false;
@@ -998,5 +996,10 @@ $(function() {
       $(this).prev().hide();
     });
     
+    
   });
+
+if ($.browser.chrome) {
+  $('#progress-nav i').css({'-webkit-transform' : 'scale(0.5)'});
+};
 </script>

@@ -53,3 +53,4 @@ gem "paperclip"
 gem 'jquery-fileupload-rails'
 gem 'jcrop-rails-v2'
 gem 'seo_helper'
+gem 'jquery-migrate-rails'

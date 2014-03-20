@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-migrate-min
 //= require ckeditor-jquery
 //= require turbolinks
 //= require bootstrap
