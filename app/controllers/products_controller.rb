@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     set_page_title I18n.t('product.sample')
+    @is_current_cate = {params[:category].to_i => 'current-cate'}
 
     @sub_cates = Product.sub_cates[params[:category].to_i]
     render_404 if @sub_cates.nil?

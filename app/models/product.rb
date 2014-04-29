@@ -2,10 +2,10 @@ class Product < ActiveRecord::Base
 	# Pagination
   paginates_per 10
 
-  M_A = I18n.t('product.sub_category.scd')
-  M_B = I18n.t('product.sub_category.spd')
-  M_C = I18n.t('product.sub_category.cbn')
-  M_D = I18n.t('product.sub_category.wc')
+  M_A = I18n.t('product.sub_category.scd') + "&nbsp;<small>Natural, HPHT, CVD</small>"
+  M_B = I18n.t('product.sub_category.spd') + "&nbsp;<small>PCD</small>"
+  M_C = I18n.t('product.sub_category.cbn') + "&nbsp;<small>PCBN</small>"
+  M_D = I18n.t('product.sub_category.wc') + "&nbsp;<small>Carbide</small>"
 
 	belongs_to :photo
 	def self.cates
