@@ -56,7 +56,11 @@ class ApplicationController < ActionController::Base
   helper_method :require_admin!
 
   def extract_locale_from_accept_language_header
-    request.env['HTTP_ACCEPT_LANGUAGE'].split(',').first.downcase.gsub(/-\w{2}/, &:upcase)
+    if env['HTTP_ACCEPT_LANGUAGE'].nil?
+      'zh-TW'
+    else
+      request.env['HTTP_ACCEPT_LANGUAGE'].split(',').first.downcase.gsub(/-\w{2}/, &:upcase)
+    end
   end
 
   def set_locale
