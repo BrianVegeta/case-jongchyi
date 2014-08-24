@@ -12,7 +12,7 @@ class Photo < ActiveRecord::Base
   
   validates_attachment 	:avatar,
   											:content_type => { 
-  												:content_type => ["image/jpg", "image/gif", "image/png"] 
+  												:content_type => ["image/jpg", "image/jpeg", "image/gif", "image/png"] 
   											}
 	attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
 	
