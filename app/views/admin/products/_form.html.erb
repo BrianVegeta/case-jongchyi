@@ -8,7 +8,7 @@
           <% Product.sub_cates.each do |cate_id, cates| %>
             <optgroup label="<%= Product.cates[cate_id] %>">
               <% cates.each do |sub_id, cate| %>
-                <option value="<%= sub_id %>" <%= @product.category == sub_id ? 'selected' : '' %>><%= cate %></option>
+                <option value="<%= sub_id %>" <%= @product.category == sub_id ? 'selected' : '' %>><%= cate.split('&nbsp;').first %></option>
               <% end %>
             </optgroup>
           <% end %>

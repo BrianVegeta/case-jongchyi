@@ -18,7 +18,6 @@
           <li><%= link_to "產品管理", admin_products_path %></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li>管理員: </li>
           <li><%= link_to "#{current_user.username} 登出", destroy_user_session_path, data:{method: :delete} %></li>
         </ul>
       </div>

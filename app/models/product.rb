@@ -73,7 +73,7 @@ class Product < ActiveRecord::Base
 		name = ''
 		Product.sub_cates.each_pair do |k, v|
 			unless v[id].nil?
-				name = Product.cates[k] + ' / ' + v[id]
+				name = Product.cates[k] + ' / ' + v[id].split('&nbsp;').first
 				break
 			end
 		end
