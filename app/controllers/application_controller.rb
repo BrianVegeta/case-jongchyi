@@ -90,6 +90,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_title_site_name
-    SeoHelper.configuration.site_name = "#{t('company')} - #{t('keywords')}"
+    # SeoHelper.configuration.site_name = "#{t('company')} - #{t('keywords')}"
+    SeoHelper.configuration.site_name = "#{t('company')}"
   end
 end
