@@ -11,20 +11,20 @@ zh-CN:
       scd: 单晶钻石
       spd: 合成聚晶钻石
       cbn: 立方氮化硼
-      wc: 碳化钨  
+      wc: 碳化钨
     sample: '产品范例'
   home: 忠祺钻石 & 忠亿精密
   company: 忠祺钻石企业有限公司
   keywords: 切削刀具,单晶钻石刀,钻石刀,PCD刀具,CVD钻石,超精密刀具,切削刀具,铣刀,V-CUT,微结构加工,专用刀,CVD合成单晶钻石,天然钻石,人造合成单晶钻石,聚晶钻石,立方氮化硼,CVD多晶钻石,无电解镍,特殊金属切削加工,光学透镜模仁加工,滚式模仁加工,高精度切削刀具,钨钢刀,成型刀具,铣刀,车刀,铜铝非铁金属等加工,钻石刀具,特殊刀具设计,钻石工具,CBN工具,制模工具
-  company_cn: 深圳忠亿精密五金设备有限公司
+  company_cn: 深圳市忠祺忠亿金刚​​石刀具有限公司
   nav_support: 支援服务
   nav_contact: 联络我们
   nav_contact_tooltip: 如果您对我们的产品有兴趣，请点此联络我们。
   contact_page:
     address: 台南市归仁区沙仑里二甲92号
-    address_cn: （邮编518000）深圳市布吉京南路9号吉盛昌工业区2号B一楼
+    address_cn: （邮编518111）深圳市龙岗区平湖新木社区新园工业区38号1楼
   support_page:
-    grinding: 
+    grinding:
       title: 工欲善其事 必先利其器
       content_1: 虽然刀具都是世上数一数二坚硬的材质，
       content_2: 在长时间的使用下还是会造成一定的正常耗损。
@@ -33,7 +33,7 @@ zh-CN:
       content_5: 我们整修后，
       content_6: 将会让刀具恢复到往日的切削品质。
       sub_content: 即使不是我们出厂的刀具，也能享有翻修的服务。
-    reform: 
+    reform:
       title: 环保且经济的聪明选择
       content_1: '刀具从生产线退役下来该何去何从，'
       content_2: '何不用更环保经济的方式延长刀具的使用寿命？'
@@ -41,15 +41,15 @@ zh-CN:
       content_4: 让没有用到又弃之可惜的昂贵刀具可以重回产线。
       content_5: 用聪明的方式降低成本。
       sub_content: 即使不是我们出厂的刀具，也能享有改造的服务。
-    custom: 
+    custom:
       title: 开创先河，方能先机在握
       content_1: 还没有找到您合适使用的加工刀具？
       content_2: 何不自己动手创造属于您专属的！
       content_3: 我们多年的刀具制作经验可以帮助您打造理想中的刀具，
       content_4: 只要您提供给我们制造刀具必要的基本资讯或图纸。
       sub_content: 既然是我们出厂的刀具，当然享有我们的品质保证。
-  home_page: 
-    nav_progress: 
+  home_page:
+    nav_progress:
       crafts: 工艺
       tech: 技术
       quality: 品质
@@ -68,7 +68,7 @@ zh-CN:
       content_3: 并经由与客户的紧密合作
       content_4: 建立起长期并且相互依赖的
       content_5: 夥伴关系
-    quality: 
+    quality:
       title: 值得信赖的品质
       content_1: 每把刀具都经过反覆检测与修改
       content_2: 直到达成您对精密刀具要求
@@ -78,7 +78,7 @@ zh-CN:
       content_1: UPC单晶钻石超精密切削刀具带来光学级镜面加工
     material:
       subscript: 钻石切削铁族合金时会让钻石刀具迅速石墨化造成不正常磨损，钛丶钽丶锆丶钨丶钼等易与钻石的碳结合成碳化物，也不适用钻石刀具加工。
-      material_1: 
+      material_1:
         title: 天然钻石
         content: 钻石是在工业上人类已知的最坚硬材质。我们特选每颗作为刀具的天然钻石，并凭藉我们多年的经验，选择最适宜的晶体方向，以实现最佳的表面光洁度与耐磨性。
       material_2:
@@ -96,4 +96,4 @@ zh-CN:
     support:
       grinding: 修磨
       reform: 改造
-      custom: 订制  
+      custom: 订制
