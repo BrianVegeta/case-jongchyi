@@ -1,0 +1,154 @@
+%br
+%br
+%br
+%br
+.row
+  #categories.col-sm-10.col-sm-offset-1
+    .row
+      .cate-item.col-xs-4.col-md-2.text-center{:id => @is_current_cate[1]}
+        %a{:href => products_path(1, Product.cates[1])}
+          %i.fa.clock.fa-2x
+          %br
+            %p.watches-title= t 'product.category.watches'
+      .cate-item.cate.col-xs-4.col-md-2.text-center{:id => @is_current_cate[5]}
+        %a{:href => products_path(5, Product.cates[5])}
+          %span.fa-stack
+            %i.fa.fa-square.fa-stack-2x
+            %i.fa.fa-flash.fa-stack-1x.fa-inverse
+          %br
+            %p= t 'product.category.precious_metals'
+      .cate-item.col-xs-4.col-md-2.text-center{:id => @is_current_cate[9]}
+        %a{:href => products_path(9, Product.cates[9])}
+          %i.fa.fa-camera-retro.fa-2x
+          %br
+            %p
+              = t 'product.category.photoelectric'
+      .cate-item.col-xs-4.col-md-2.text-center{:id => @is_current_cate[13]}
+        %a{:href => products_path(13, Product.cates[13])}
+          %i.fa.fa-flask.fa-2x
+          %br
+            %p
+              = t 'product.category.polymer_materials'
+      .cate-item.col-xs-4.col-md-2.text-center{:id => @is_current_cate[17]}
+        %a{:href => products_path(17, Product.cates[17])}
+          %i.fa.fa-inbox.fa-2x
+          %br
+            %p
+              = t 'product.category.chassis_aluminum'
+      .cate-item.col-xs-4.col-md-2.text-center{:id => @is_current_cate[21]}
+        %a{:href => products_path(21, Product.cates[21])}
+          %i.fa.fa-wrench.fa-2x
+          %br
+            %p
+              = t 'product.category.exclusive_custom'
+  .col-xs-12.col-sm-10.col-sm-offset-1
+    %hr
+  #product_list.col-xs-12.col-sm-10.col-sm-offset-1
+    - @products.each_pair do |k, sub_products|
+      %h1.cates-title= raw @sub_cates[k]
+      %br
+      - sub_products.in_groups_of(4, false) do |products|
+        .row
+          - products.each do |product|
+            .col-sm-3
+              %a.product_item{"data-product-id" => product.id, :href => "##{product.id}"}
+                %div
+                  = image_tag(product.photo.avatar.url(:small), class: 'img-rounded')
+                %h4.text-center
+                  = product.trans_title
+              %br
+              %br
+#myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} &times;
+        %h4#myModalLabel.modal-title
+      .modal-body
+        .row
+          .col-sm-6
+            = image_tag('missing.jpg', class: 'img-rounded', id: 'product_image')
+          .col-sm-6
+            #product_content
+      .modal-footer
+:javascript
+  var show_product_path = "#{product_path(:id, :json)}";
+  $('.product_item').click(function() {
+    var product_path = show_product_path.replace('id', $(this).data('productId'));
+    $.get(product_path, function(response) {
+      $('#myModalLabel').html(response.title);
+      $('#product_content').html(response.content);
+      $('#product_image').attr('src', response.thumb);
+      $('#myModal').modal('show');
+    });
+
+  });
+:css
+  #categories a {
+    text-decoration: none;
+  }
+  #categories .cate-item {
+    padding-top: 10px;
+  }
+  #current-cate {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 4px 4px 3px rgba(20%,20%,40%,0.5);
+  }
+  a.product_item {
+    color: #373737;
+  }
+  .modal .modal-dialog {
+    width: 80%;
+    margin: auto;
+  }
+  #watch {
+    width: 28px;
+    height: 28px;
+  }
+  #watch img {
+    width: 100%;
+    margin-left: 37px;
+  }
+  .fa.clock {
+    width: 26px;
+    height: 26px;
+    margin: 0 1px 1px 1px;
+    background-image: url(' asset_path("clock-time-3.png") ');
+    background-repeat: no-repeat;
+    background-size: 26px Auto;
+  }
+  .watches-title {
+    margin-top: -4px;
+  }
+  @media (max-width: 768px) {
+      .modal .modal-dialog {
+        width: 94%;
+      }
+      #watch img {
+        width: 100%;
+        margin-left: 131px;
+      }
+      #categories a p {
+        font-size: 14px;
+      }
+  }
+  @media (max-width: 460px) {
+      .modal .modal-dialog {
+        width: 94%;
+      }
+      #watch img {
+        width: 100%;
+        margin-left: 131px;
+      }
+      #categories a p {
+        font-size: 12px;
+      }
+      #categories {
+        padding-left: 0;
+        padding-right: 0;
+      }
+      #product_list h1.cates-title {
+        font-size: 22px;
+      }
+  }
