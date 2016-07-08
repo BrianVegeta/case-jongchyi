@@ -13,7 +13,7 @@
   a.product_item {
     color: #373737;
   }
-  .modal .modal-dialog { 
+  .modal .modal-dialog {
     width: 80%;
     margin: auto;
   }
@@ -30,15 +30,15 @@
     height: 26px;
     margin: 0 1px 1px 1px;
     background-image: url('<%= asset_path("clock-time-3.png") %>');
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
     background-size: 26px Auto;
   }
   .watches-title {
     margin-top: -4px;
   }
   @media (max-width: 768px) {
-      .modal .modal-dialog { 
-        width: 94%; 
+      .modal .modal-dialog {
+        width: 94%;
       }
       #watch img {
         width: 100%;
@@ -49,8 +49,8 @@
       }
   }
   @media (max-width: 460px) {
-      .modal .modal-dialog { 
-        width: 94%; 
+      .modal .modal-dialog {
+        width: 94%;
       }
       #watch img {
         width: 100%;
@@ -89,7 +89,7 @@
       <br>
       <p><%= t 'product.category.precious_metals' %></p>
     </a>
-  </div>  
+  </div>
   <div class="col-xs-4 col-md-2 text-center" id="<%= @is_current_cate[9] %>">
     <a href="<%= products_path(9, Product.cates[9]) %>">
       <i class="fa fa-camera-retro fa-2x"></i>
@@ -98,8 +98,8 @@
         <%= t 'product.category.photoelectric' %>
       </p>
     </a>
-  </div>  
-  <div class="col-xs-4 col-md-2 text-center" id="<%= @is_current_cate[13] %>">  
+  </div>
+  <div class="col-xs-4 col-md-2 text-center" id="<%= @is_current_cate[13] %>">
     <a href="<%= products_path(13, Product.cates[13]) %>">
       <i class="fa fa-flask fa-2x"></i>
       <br>
@@ -135,19 +135,23 @@
     <div class="col-sm-12">
       <h1 class="cates-title"><%=raw @sub_cates[k] %></h1>
       <br>
-      <% sub_products.each do |product|%>
-        <div class="col-sm-3">
-          <a href="#<%= product.id %>" class="product_item" data-product-id="<%= product.id %>" >
-            <div>
-              <%= image_tag(product.photo.avatar.url(:small), class: 'img-rounded') %>
-            </div>  
-            <h4 class="text-center"><%= product.trans_title %> </h4>
-          </a>
-          <br>
-          <br>
+      <% sub_products.in_groups_of(4, false) do |products|%>
+        <div class="row">
+          <% products.each do |product| %>
+            <div class="col-sm-3">
+              <a href="#<%= product.id %>" class="product_item" data-product-id="<%= product.id %>" >
+                <div>
+                  <%= image_tag(product.photo.avatar.url(:small), class: 'img-rounded') %>
+                </div>
+                <h4 class="text-center"><%= product.trans_title %> </h4>
+              </a>
+              <br>
+              <br>
+            </div>
+          <% end -%>
         </div>
       <% end -%>
-    </div>    
+    </div>
   <% end -%>
 </div>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -185,6 +189,6 @@
       $('#product_image').attr('src', response.thumb);
       $('#myModal').modal('show');
     });
-    
+
   });
 </script>
