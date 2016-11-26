@@ -40,9 +40,9 @@ ActiveRecord::Schema.define(version: 20140227202045) do
     t.string   "zh_cn_title",   default: "", null: false
     t.text     "content"
     t.text     "zh_cn_content"
+    t.integer  "photo_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "photo_id"
     t.integer  "category"
   end
 

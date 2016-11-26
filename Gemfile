@@ -12,7 +12,8 @@ gem 'jquery-rails', '~> 3.0.4'
 gem 'turbolinks', '~> 2.1.0'
 gem 'jbuilder', '~> 1.5.3'
 gem 'bcrypt-ruby', '~> 3.1.2'
-gem 'mysql2'
+gem 'mysql2', '~> 0.3.18'
+gem 'rake','11.2.2'
 
 group :doc do
   gem 'sdoc', require: false

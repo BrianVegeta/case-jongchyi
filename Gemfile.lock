@@ -92,7 +92,7 @@ GEM
       subexec (~> 0.2.1)
     minitest (4.7.5)
     multi_json (1.8.4)
-    mysql2 (0.3.15)
+    mysql2 (0.3.21)
     orm_adapter (0.5.0)
     paperclip (4.1.1)
       activemodel (>= 3.0.0)
@@ -186,11 +186,12 @@ DEPENDENCIES
   jquery-rails (~> 3.0.4)
   kaminari (~> 0.15.0)
   mini_magick
-  mysql2
+  mysql2 (~> 0.3.18)
   paperclip
   rails (= 4.0.2)
   rails-i18n (~> 4.0.0)
   rails_layout (~> 0.5.11)
+  rake (= 11.2.2)
   sass-rails (~> 4.0.1)
   sdoc
   seo_helper
@@ -199,5 +200,8 @@ DEPENDENCIES
   turbolinks (~> 2.1.0)
   uglifier (~> 2.4.0)
 
+RUBY VERSION
+   ruby 2.0.0p643
+
 BUNDLED WITH
-   1.10.6
+   1.13.6
