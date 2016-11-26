@@ -29,4 +29,5 @@ doc/
 /config/application.yml
 .secret
 #public/system
-public/assets/splash_images
+/public/assets/splash_images
+/public/assets/splash_images/
